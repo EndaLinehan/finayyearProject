@@ -57,6 +57,7 @@
                 android:orientation="vertical"></LinearLayout>
 
             <Button
+                android:id="@+id/shopBtn"
                 android:layout_width="209dp"
                 android:layout_height="64dp"
                 android:layout_gravity="center"

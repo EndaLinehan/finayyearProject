@@ -1,9 +1,9 @@
-package com.example.firebaseregistration;
+package com.example.firebaseregistration.models;
 
 public class User {
     private String email;
     private String password;
-    private long id;
+
     private int testResults;
     public User() {
     }
@@ -29,13 +29,7 @@ public class User {
         this.password = password;
     }
 
-    public long getId() {
-        return id;
-    }
 
-    public void setId(long id) {
-        this.id = id;
-    }
 
     public int getCBTestResults() {
         return testResults;

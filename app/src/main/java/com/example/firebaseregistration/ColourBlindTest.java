@@ -32,15 +32,16 @@ import java.io.IOException;
 import java.util.List;
 
 public class ColourBlindTest extends AppCompatActivity {
-private Button nextButton;
+private Button nextButton, homeButton;
 private EditText answer;
 private ImageView imageView;
-private String guess;
+private String guess = "" ;
 private StorageReference storageReference;
 //private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance("https://newproject-49f95-default-rtdb.europe-west1.firebasedatabase.app/Images");
 //private DatabaseReference databaseReference = firebaseDatabase.getReference();
 //private DatabaseReference imageref = databaseReference.child("Images");
 private int counter = 0;
+private int result = 0;
 private ViewFlipper viewFlipper;
 
     @Override
@@ -53,20 +54,31 @@ private ViewFlipper viewFlipper;
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Toast.makeText(ColourBlindTest.this, result  , Toast.LENGTH_SHORT).show();
                 counter++;
-//                answer = (EditText) findViewById(R.id.cbanswer);
                 next();
                 viewFlipper.showNext();
 
              }
 
         });
+        homeButton = findViewById(R.id.cbHomeButton);
+        homeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= new Intent(ColourBlindTest.this, MainActivity2.class);
+                startActivity(intent);
+            }
+        });
+
     }
     public void next(){
+            answer = (EditText) findViewById(R.id.cbanswer);
+            guess= answer.getText().toString();
 
-        Toast.makeText(ColourBlindTest.this, counter + "", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(ColourBlindTest.this, guess  , Toast.LENGTH_SHORT).show();
+        if(counter == 12) {
 
-        if(counter == 0) {
             imageView = findViewById(R.id.imageView1);
             storageReference = FirebaseStorage.getInstance().getReference().child("Ishihara Colour Blind Test/answer 16.jpg");
 
@@ -79,14 +91,21 @@ private ViewFlipper viewFlipper;
                             public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
                                 Bitmap bitmap = BitmapFactory.decodeFile(local.getAbsolutePath());
                                 imageView.setImageBitmap(bitmap);
+
+
                             }
                         });
-            } catch (IOException e) {
+
+
+            }
+            catch (IOException e) {
                 e.printStackTrace();
             }
 
-        }else if(counter == 1){
-            imageView = findViewById(R.id.imageView2);
+        }
+        else if(counter == 1){
+
+             imageView = findViewById(R.id.imageView2);
             storageReference = FirebaseStorage.getInstance().getReference().child("Ishihara Colour Blind Test/answer 12.jpg");
 
             try {
@@ -98,12 +117,21 @@ private ViewFlipper viewFlipper;
                             public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
                                 Bitmap bitmap = BitmapFactory.decodeFile(local.getAbsolutePath());
                                 imageView.setImageBitmap(bitmap);
+//                                if(answer.getText().toString().equals("12")){
+//                                    result++;
+//                                    Toast.makeText(ColourBlindTest.this, result + "12", Toast.LENGTH_SHORT).show();
+//                                }
                             }
                         });
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }else if(counter == 2){
+            if(guess.equals("12")){
+                result++;
+                Toast.makeText(ColourBlindTest.this, guess , Toast.LENGTH_LONG).show();
+
+            }else{Toast.makeText(ColourBlindTest.this,"Something wrong with IF",Toast.LENGTH_LONG).show();}
             imageView = findViewById(R.id.imageView3);
             storageReference = FirebaseStorage.getInstance().getReference().child("Ishihara Colour Blind Test/answer 2.jpg");
 
@@ -122,6 +150,11 @@ private ViewFlipper viewFlipper;
                 e.printStackTrace();
             }
         }else if(counter == 3){
+            if(guess.equals("2")){
+                result++;
+                Toast.makeText(ColourBlindTest.this, guess , Toast.LENGTH_LONG).show();
+
+            }else{Toast.makeText(ColourBlindTest.this,"Something wrong with IF",Toast.LENGTH_LONG).show();}
             imageView = findViewById(R.id.imageView4);
             storageReference = FirebaseStorage.getInstance().getReference().child("Ishihara Colour Blind Test/answer 29.jpg");
 
@@ -140,6 +173,11 @@ private ViewFlipper viewFlipper;
                 e.printStackTrace();
             }
         }else if(counter == 4){
+            if(guess.equals("29")){
+                result++;
+                Toast.makeText(ColourBlindTest.this, guess , Toast.LENGTH_LONG).show();
+
+            }else{Toast.makeText(ColourBlindTest.this,"Something wrong with IF",Toast.LENGTH_LONG).show();}
             imageView = findViewById(R.id.imageView5);
             storageReference = FirebaseStorage.getInstance().getReference().child("Ishihara Colour Blind Test/answer 3.jpg");
 
@@ -158,6 +196,11 @@ private ViewFlipper viewFlipper;
                 e.printStackTrace();
             }
         }else if(counter == 5){
+            if(guess.equals("3")){
+                result++;
+                Toast.makeText(ColourBlindTest.this, guess , Toast.LENGTH_LONG).show();
+
+            }else{Toast.makeText(ColourBlindTest.this,"Something wrong with IF",Toast.LENGTH_LONG).show();}
             imageView = findViewById(R.id.imageView6);
             storageReference = FirebaseStorage.getInstance().getReference().child("Ishihara Colour Blind Test/answer 42.jpg");
 
@@ -176,6 +219,11 @@ private ViewFlipper viewFlipper;
                 e.printStackTrace();
             }
         }else if(counter == 6){
+            if(guess.equals("42")){
+                result++;
+                Toast.makeText(ColourBlindTest.this, guess , Toast.LENGTH_LONG).show();
+
+            }else{Toast.makeText(ColourBlindTest.this,"Something wrong with IF",Toast.LENGTH_LONG).show();}
             imageView = findViewById(R.id.imageView7);
             storageReference = FirebaseStorage.getInstance().getReference().child("Ishihara Colour Blind Test/answer 45.jpg");
 
@@ -194,6 +242,11 @@ private ViewFlipper viewFlipper;
                 e.printStackTrace();
             }
         }else if(counter == 7){
+            if(guess.equals("45")){
+                result++;
+                Toast.makeText(ColourBlindTest.this, guess , Toast.LENGTH_LONG).show();
+
+            }else{Toast.makeText(ColourBlindTest.this,"Something wrong with IF",Toast.LENGTH_LONG).show();}
             imageView = findViewById(R.id.imageView8);
             storageReference = FirebaseStorage.getInstance().getReference().child("Ishihara Colour Blind Test/answer 5.jpg");
 
@@ -212,6 +265,11 @@ private ViewFlipper viewFlipper;
                 e.printStackTrace();
             }
         }else if(counter == 8){
+            if(guess.equals("5")){
+                result++;
+                Toast.makeText(ColourBlindTest.this, guess , Toast.LENGTH_LONG).show();
+
+            }else{Toast.makeText(ColourBlindTest.this,"Something wrong with IF",Toast.LENGTH_LONG).show();}
             imageView = findViewById(R.id.imageView9);
             storageReference = FirebaseStorage.getInstance().getReference().child("Ishihara Colour Blind Test/answer 6.jpg");
 
@@ -230,6 +288,11 @@ private ViewFlipper viewFlipper;
                 e.printStackTrace();
             }
         }else if(counter == 9){
+            if(guess.equals("6")){
+                result++;
+                Toast.makeText(ColourBlindTest.this, guess , Toast.LENGTH_LONG).show();
+
+            }else{Toast.makeText(ColourBlindTest.this,"Something wrong with IF",Toast.LENGTH_LONG).show();}
             imageView = findViewById(R.id.imageView10);
             storageReference = FirebaseStorage.getInstance().getReference().child("Ishihara Colour Blind Test/answer 7.jpg");
 
@@ -248,6 +311,11 @@ private ViewFlipper viewFlipper;
                 e.printStackTrace();
             }
         }else if(counter == 10){
+            if(guess.equals("7")){
+                result++;
+                Toast.makeText(ColourBlindTest.this, guess , Toast.LENGTH_LONG).show();
+
+            }else{Toast.makeText(ColourBlindTest.this,"Something wrong with IF",Toast.LENGTH_LONG).show();}
             imageView = findViewById(R.id.imageView11);
             storageReference = FirebaseStorage.getInstance().getReference().child("Ishihara Colour Blind Test/answer 74.jpg");
 
@@ -266,6 +334,11 @@ private ViewFlipper viewFlipper;
                 e.printStackTrace();
             }
         }else if(counter == 11){
+            if(guess.equals("74")){
+                result++;
+                Toast.makeText(ColourBlindTest.this, guess , Toast.LENGTH_LONG).show();
+
+            }else{Toast.makeText(ColourBlindTest.this,"Something wrong with IF",Toast.LENGTH_LONG).show();}
             imageView = findViewById(R.id.imageView12);
             storageReference = FirebaseStorage.getInstance().getReference().child("Ishihara Colour Blind Test/answer 8.jpg");
 
@@ -283,10 +356,16 @@ private ViewFlipper viewFlipper;
             } catch (IOException e) {
                 e.printStackTrace();
             }
+        }else if(counter ==13){
+            if(guess.equals("16")){
+                result += 1;
+
+
+            }else{Toast.makeText(ColourBlindTest.this,"Something wrong with IF",Toast.LENGTH_LONG).show();}
         }else{
+
             Toast.makeText(ColourBlindTest.this, "Test Completed", Toast.LENGTH_LONG).show();
-            Intent intent= new Intent(ColourBlindTest.this, HomePage.class);
-            startActivity(intent);
+
         }
 
     }

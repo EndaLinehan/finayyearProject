@@ -16,7 +16,7 @@ import android.widget.Toast;
 public class HomePage extends AppCompatActivity {
 
     private Button eyetests;
-
+    private Button shop;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,13 +36,14 @@ public class HomePage extends AppCompatActivity {
             }
         });
 
-//        FloatingActionButton fab = findViewById(R.id.fab);
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-//            }
-//        });
+        shop = findViewById(R.id.shopBtn);
+
+        shop.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomePage.this,store.class);
+                startActivity(intent);
+            }
+        });
     }
 }
