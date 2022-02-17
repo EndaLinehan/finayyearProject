@@ -37,9 +37,9 @@ private EditText answer;
 private ImageView imageView;
 private String guess = "" ;
 private StorageReference storageReference;
-//private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance("https://newproject-49f95-default-rtdb.europe-west1.firebasedatabase.app/Images");
-//private DatabaseReference databaseReference = firebaseDatabase.getReference();
-//private DatabaseReference imageref = databaseReference.child("Images");
+private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance("https://newproject-49f95-default-rtdb.europe-west1.firebasedatabase.app/Images");
+private DatabaseReference databaseReference = firebaseDatabase.getReference();
+private DatabaseReference imageref = databaseReference.child("Images");
 private int counter = 0;
 private int result = 0;
 private ViewFlipper viewFlipper;
@@ -62,14 +62,14 @@ private ViewFlipper viewFlipper;
              }
 
         });
-        homeButton = findViewById(R.id.cbHomeButton);
-        homeButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent= new Intent(ColourBlindTest.this, MainActivity2.class);
-                startActivity(intent);
-            }
-        });
+//        homeButton = findViewById(R.id.cbHomeButton);
+//        homeButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent= new Intent(ColourBlindTest.this, MainActivity2.class);
+//                startActivity(intent);
+//            }
+//        });
 
     }
     public void next(){
@@ -117,10 +117,10 @@ private ViewFlipper viewFlipper;
                             public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
                                 Bitmap bitmap = BitmapFactory.decodeFile(local.getAbsolutePath());
                                 imageView.setImageBitmap(bitmap);
-//                                if(answer.getText().toString().equals("12")){
-//                                    result++;
-//                                    Toast.makeText(ColourBlindTest.this, result + "12", Toast.LENGTH_SHORT).show();
-//                                }
+                                if(answer.getText().toString().equals("12")){
+                                    result++;
+                                    Toast.makeText(ColourBlindTest.this, result + "12", Toast.LENGTH_SHORT).show();
+                                }
                             }
                         });
             } catch (IOException e) {

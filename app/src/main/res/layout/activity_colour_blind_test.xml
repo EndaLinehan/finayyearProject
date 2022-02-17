@@ -161,24 +161,6 @@
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="83dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="30dp"
-        android:orientation="horizontal"
-        android:padding="3dp">
-
-    <Button
-        android:id="@+id/cbHomeButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="15dp"
-        android:paddingTop="20dp"
-        android:text="Home"
-        tools:layout_editor_absoluteX="160dp"
-        tools:layout_editor_absoluteY="621dp" />
-    </LinearLayout>
 </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
