@@ -37,7 +37,7 @@ private EditText answer;
 private ImageView imageView;
 private String guess = "" ;
 private StorageReference storageReference;
-private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance("https://newproject-49f95-default-rtdb.europe-west1.firebasedatabase.app/Images");
+private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
 private DatabaseReference databaseReference = firebaseDatabase.getReference();
 private DatabaseReference imageref = databaseReference.child("Images");
 private int counter = 0;
@@ -54,7 +54,8 @@ private ViewFlipper viewFlipper;
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(ColourBlindTest.this, result  , Toast.LENGTH_SHORT).show();
+//                Toast.makeText(ColourBlindTest.this, result  , Toast.LENGTH_SHORT).show();
+                nextButton.setText("Start");
                 counter++;
                 next();
                 viewFlipper.showNext();
@@ -62,14 +63,7 @@ private ViewFlipper viewFlipper;
              }
 
         });
-//        homeButton = findViewById(R.id.cbHomeButton);
-//        homeButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent= new Intent(ColourBlindTest.this, MainActivity2.class);
-//                startActivity(intent);
-//            }
-//        });
+
 
     }
     public void next(){
@@ -80,7 +74,7 @@ private ViewFlipper viewFlipper;
         if(counter == 12) {
 
             imageView = findViewById(R.id.imageView1);
-            storageReference = FirebaseStorage.getInstance().getReference().child("Ishihara Colour Blind Test/answer 16.jpg");
+            storageReference = FirebaseStorage.getInstance().getReference().child("Images").child("Ishihara Colour Blind Test/answer 16.jpg");
 
             try {
                 File local = File.createTempFile("answer 16", "jpg");
@@ -129,7 +123,7 @@ private ViewFlipper viewFlipper;
         }else if(counter == 2){
             if(guess.equals("12")){
                 result++;
-                Toast.makeText(ColourBlindTest.this, guess , Toast.LENGTH_LONG).show();
+                Toast.makeText(ColourBlindTest.this, result , Toast.LENGTH_LONG).show();
 
             }else{Toast.makeText(ColourBlindTest.this,"Something wrong with IF",Toast.LENGTH_LONG).show();}
             imageView = findViewById(R.id.imageView3);
