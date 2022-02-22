@@ -55,7 +55,7 @@ private ViewFlipper viewFlipper;
             @Override
             public void onClick(View v) {
 //                Toast.makeText(ColourBlindTest.this, result  , Toast.LENGTH_SHORT).show();
-                nextButton.setText("Start");
+                nextButton.setText("Next");
                 counter++;
                 next();
                 viewFlipper.showNext();
