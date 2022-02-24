@@ -358,6 +358,9 @@ private ViewFlipper viewFlipper;
             }else{Toast.makeText(ColourBlindTest.this,"Something wrong with IF",Toast.LENGTH_LONG).show();}
         }else{
 
+            Intent intent= new Intent(ColourBlindTest.this, HomePage.class);
+            startActivity(intent);
+
             Toast.makeText(ColourBlindTest.this, "Test Completed", Toast.LENGTH_LONG).show();
 
         }

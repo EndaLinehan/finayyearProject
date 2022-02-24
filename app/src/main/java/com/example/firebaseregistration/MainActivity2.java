@@ -86,7 +86,8 @@ public class MainActivity2 extends AppCompatActivity {
                                 String id = task.getResult().getUser().getUid();
                                 mRootref.getReference().child("Users").child(id).setValue(user);
                                 Intent intent= new Intent(MainActivity2.this, MainActivity.class);
-                                startActivity(intent);}
+                                startActivity(intent);
+                            }
 
                             else {
 
