@@ -15,8 +15,12 @@ import android.widget.ImageView;
 import android.widget.Toast;
 import android.widget.ViewFlipper;
 
+import com.example.firebaseregistration.models.CbTestResults;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -29,6 +33,10 @@ import com.google.firebase.storage.StorageReference;
 
 import java.io.File;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
 import java.util.List;
 
 public class ColourBlindTest extends AppCompatActivity {
@@ -43,6 +51,10 @@ private DatabaseReference imageref = databaseReference.child("Images");
 private int counter = 0;
 private int result = 0;
 private ViewFlipper viewFlipper;
+private Date date;
+private FirebaseDatabase mRootref;
+private DatabaseReference mNoderef;
+private FirebaseUser mUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +62,10 @@ private ViewFlipper viewFlipper;
         setContentView(R.layout.activity_colour_blind_test);
         viewFlipper = (ViewFlipper) findViewById(R.id.viewFlipper);
         nextButton = findViewById(R.id.cbButtonAnswer);
+        mUser = FirebaseAuth.getInstance().getCurrentUser();
+
+        mRootref = FirebaseDatabase.getInstance("https://newproject-49f95-3fc79.firebaseio.com/");
+        mNoderef = mRootref.getReference();
 
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -357,11 +373,18 @@ private ViewFlipper viewFlipper;
 
             }else{Toast.makeText(ColourBlindTest.this,"Something wrong with IF",Toast.LENGTH_LONG).show();}
         }else{
+            SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+            date = new Date();
+            CbTestResults cbTestResults = new CbTestResults(result,date);
+            String id = mUser.getUid();
+            mRootref.getReference().child("Users").child(id).setValue(cbTestResults);
+
+            Toast.makeText(ColourBlindTest.this, "Test Completed", Toast.LENGTH_LONG).show();
+
+
 
             Intent intent= new Intent(ColourBlindTest.this, HomePage.class);
             startActivity(intent);
-
-            Toast.makeText(ColourBlindTest.this, "Test Completed", Toast.LENGTH_LONG).show();
 
         }
 
