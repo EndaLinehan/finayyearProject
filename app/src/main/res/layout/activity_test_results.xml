@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:stretchColumns="*"
+    android:background="@drawable/androidbackground"
+    android:gravity="top">
+
+    <TableRow
+        android:layout_width="0dp"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Plate"
+            android:textSize="10dip"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:textColor="#ef873e"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Answer"
+            android:textSize="10dip"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:textColor="#ef873e"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Correct Answer"
+            android:textSize="10dip"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:textColor="#ef873e"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Correct/Wrong"
+            android:textSize="10dip"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:textColor="#ef873e"/>
+    </TableRow>
+
+    <TableRow android:layout_width="0dp"
+    android:background="#ffffff">
+
+        <TextView
+            android:id="@+id/r1b1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10dip"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/r1b2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10dip"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/r1b3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10dip"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/r1b4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10dip"
+            android:textStyle="bold" />
+    </TableRow>
+
+    <TableRow android:layout_width="0dp"
+        android:background="#ffffff">
+
+        <TextView
+            android:id="@+id/r2b1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10dip"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/r2b2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10dip"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/r2b3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10dip"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/r2b4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10dip"
+            android:textStyle="bold" />
+    </TableRow>
+
+    <TableRow android:layout_width="0dp"
+        android:background="#ffffff">
+
+        <TextView
+            android:id="@+id/r3b1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10dip"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/r3b2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10dip"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/r3b3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10dip"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/r3b4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10dip"
+            android:textStyle="bold" />
+    </TableRow>
+
+    <TableRow android:layout_width="0dp"
+        android:background="#ffffff">
+
+        <TextView
+            android:id="@+id/r4b1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10dip"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/r4b2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10dip"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/r4b3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10dip"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/r4b4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10dip"
+            android:textStyle="bold" />
+    </TableRow>
+
+    <TableRow android:layout_width="0dp"
+        android:background="#ffffff">
+
+        <TextView
+            android:id="@+id/r5b1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10dip"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/r5b2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10dip"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/r5b3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10dip"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/r5b4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10dip"
+            android:textStyle="bold" />
+    </TableRow>
+
+    <TableRow android:layout_width="0dp"
+        android:background="#ffffff">
+
+        <TextView
+            android:id="@+id/r6b1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10dip"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/r6b2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10dip"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/r6b3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10dip"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/r6b4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10dip"
+            android:textStyle="bold" />
+    </TableRow>
+
+    <TableRow android:layout_width="0dp"
+        android:background="#ffffff">
+
+        <TextView
+            android:id="@+id/r7b1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10dip"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/r7b2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10dip"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/r7b3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10dip"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/r7b4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10dip"
+            android:textStyle="bold" />
+    </TableRow>
+
+    <TableRow android:layout_width="0dp"
+        android:background="#ffffff">
+
+        <TextView
+            android:id="@+id/r8b1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10dip"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/r8b2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10dip"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/r8b3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10dip"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/r8b4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10dip"
+            android:textStyle="bold" />
+    </TableRow>
+
+    <TableRow android:layout_width="0dp"
+        android:background="#ffffff">
+
+        <TextView
+            android:id="@+id/r9b1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10dip"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/r9b2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10dip"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/r9b3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10dip"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/r9b4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10dip"
+            android:textStyle="bold" />
+    </TableRow>
+
+    <TableRow android:layout_width="0dp"
+        android:background="#ffffff">
+
+        <TextView
+            android:id="@+id/r10b1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10dip"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/r10b2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10dip"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/r10b3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10dip"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/r10b4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10dip"
+            android:textStyle="bold" />
+    </TableRow>
+
+    <TableRow android:layout_width="0dp"
+        android:background="#ffffff">
+
+        <TextView
+            android:id="@+id/r11b1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10dip"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/r11b2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10dip"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/r11b3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10dip"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/r11b4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10dip"
+            android:textStyle="bold" />
+    </TableRow>
+
+    <TableRow android:layout_width="0dp"
+        android:background="#ffffff">
+
+    <TextView
+        android:id="@+id/r12b1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="10dip"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/r12b2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="10dip"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/r12b3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="10dip"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/r12b4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="10dip"
+        android:textStyle="bold" />
+</TableRow>
+
+    <Button
+        android:id="@+id/finishResults"
+        android:paddingTop="25dp"
+        android:paddingBottom="25dp"
+        android:text="Back to main Screen"
+        android:textSize="15dp"
+        android:textStyle="bold"></Button>
+</TableLayout>

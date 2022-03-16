@@ -33,6 +33,7 @@ import com.google.firebase.storage.StorageReference;
 
 import java.io.File;
 import java.io.IOException;
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -53,12 +54,16 @@ public class ColourBlindTest extends AppCompatActivity {
     private int plate = 0;
     private int correctanswer = 0;
     private ViewFlipper viewFlipper;
-    private Date date;
+    private Date date= new Date();;
     private DatabaseReference mDatabase;
     private FirebaseDatabase mRootref;
     private DatabaseReference mNoderef;
     private FirebaseUser mUser;
     private int previousFlipperID = -1; //this stores the previous state of the flipper that was selected
+
+    private DateFormat df = new SimpleDateFormat("EEE, d MMM yyyy");
+    private String date2String = df.format(date);
+
 
 
     //FH (1) need an array of CBTestResults objects
@@ -90,8 +95,7 @@ public class ColourBlindTest extends AppCompatActivity {
 //                Toast.makeText(ColourBlindTest.this, result  , Toast.LENGTH_SHORT).show();
                 nextButton.setText("Next");
                 counter++;
-                SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-                date = new Date();
+
                 //load images counter
                 loadImages();
                 viewFlipper.showNext();
@@ -357,8 +361,10 @@ public class ColourBlindTest extends AppCompatActivity {
             else
                 result=0;
 
+
             //FH (3) create object
-            CbTestResults cbTestResults = new CbTestResults(plate, Integer.parseInt(guess), correctanswer, result, date);
+
+            CbTestResults cbTestResults = new CbTestResults(plate, Integer.parseInt(guess), correctanswer, result, date2String);
 
             //FH (4) Save object to database
 
@@ -373,7 +379,7 @@ public class ColourBlindTest extends AppCompatActivity {
                 else
                     result = 0;
 
-            CbTestResults cbTestResults = new CbTestResults(plate, Integer.parseInt(guess), correctanswer, result, date);
+            CbTestResults cbTestResults = new CbTestResults(plate, Integer.parseInt(guess), correctanswer, result, date2String);
             //FH (4) Save object to database
             mNoderef.child("users").child(mUser.getUid()).child("plate2").setValue(cbTestResults);
         }
@@ -387,7 +393,7 @@ public class ColourBlindTest extends AppCompatActivity {
             else
                 result=0;
 
-            CbTestResults cbTestResults = new CbTestResults(plate, Integer.parseInt(guess), correctanswer, result, date);
+            CbTestResults cbTestResults = new CbTestResults(plate, Integer.parseInt(guess), correctanswer, result, date2String);
             //FH (4) Save object to database
             mNoderef.child("users").child(mUser.getUid()).child("plate3").setValue(cbTestResults);
         }
@@ -401,7 +407,7 @@ public class ColourBlindTest extends AppCompatActivity {
             else
                 result=0;
 
-            CbTestResults cbTestResults = new CbTestResults(plate, Integer.parseInt(guess), correctanswer, result, date);
+            CbTestResults cbTestResults = new CbTestResults(plate, Integer.parseInt(guess), correctanswer, result, date2String);
             //FH (4) Save object to database
             mNoderef.child("users").child(mUser.getUid()).child("plate4").setValue(cbTestResults);
         }
@@ -415,7 +421,7 @@ public class ColourBlindTest extends AppCompatActivity {
             else
                 result=0;
 
-            CbTestResults cbTestResults = new CbTestResults(plate, Integer.parseInt(guess), correctanswer, result, date);
+            CbTestResults cbTestResults = new CbTestResults(plate, Integer.parseInt(guess), correctanswer, result, date2String);
             //FH (4) Save object to database
             mNoderef.child("users").child(mUser.getUid()).child("plate5").setValue(cbTestResults);
         }
@@ -429,7 +435,7 @@ public class ColourBlindTest extends AppCompatActivity {
             else
                 result=0;
 
-            CbTestResults cbTestResults = new CbTestResults(plate, Integer.parseInt(guess), correctanswer, result, date);
+            CbTestResults cbTestResults = new CbTestResults(plate, Integer.parseInt(guess), correctanswer, result, date2String);
             //FH (4) Save object to database
             mNoderef.child("users").child(mUser.getUid()).child("plate6").setValue(cbTestResults);
         }
@@ -443,7 +449,7 @@ public class ColourBlindTest extends AppCompatActivity {
             else
                 result=0;
 
-            CbTestResults cbTestResults = new CbTestResults(plate, Integer.parseInt(guess), correctanswer, result, date);
+            CbTestResults cbTestResults = new CbTestResults(plate, Integer.parseInt(guess), correctanswer, result, date2String);
             //FH (4) Save object to database
             mNoderef.child("users").child(mUser.getUid()).child("plate7").setValue(cbTestResults);
         }
@@ -457,7 +463,7 @@ public class ColourBlindTest extends AppCompatActivity {
             else
                 result=0;
 
-            CbTestResults cbTestResults = new CbTestResults(plate, Integer.parseInt(guess), correctanswer, result, date);
+            CbTestResults cbTestResults = new CbTestResults(plate, Integer.parseInt(guess), correctanswer, result, date2String);
             //FH (4) Save object to database
             mNoderef.child("users").child(mUser.getUid()).child("plate8").setValue(cbTestResults);
         }
@@ -471,7 +477,7 @@ public class ColourBlindTest extends AppCompatActivity {
             else
                 result=0;
 
-            CbTestResults cbTestResults = new CbTestResults(plate, Integer.parseInt(guess), correctanswer, result, date);
+            CbTestResults cbTestResults = new CbTestResults(plate, Integer.parseInt(guess), correctanswer, result, date2String);
             //FH (4) Save object to database
             mNoderef.child("users").child(mUser.getUid()).child("plate9").setValue(cbTestResults);
         }
@@ -485,7 +491,7 @@ public class ColourBlindTest extends AppCompatActivity {
             else
                 result=0;
 
-            CbTestResults cbTestResults = new CbTestResults(plate, Integer.parseInt(guess), correctanswer, result, date);
+            CbTestResults cbTestResults = new CbTestResults(plate, Integer.parseInt(guess), correctanswer, result, date2String);
             //FH (4) Save object to database
             mNoderef.child("users").child(mUser.getUid()).child("plate10").setValue(cbTestResults);
         }
@@ -499,7 +505,7 @@ public class ColourBlindTest extends AppCompatActivity {
             else
                 result=0;
 
-            CbTestResults cbTestResults = new CbTestResults(plate, Integer.parseInt(guess), correctanswer, result, date);
+            CbTestResults cbTestResults = new CbTestResults(plate, Integer.parseInt(guess), correctanswer, result, date2String);
             //FH (4) Save object to database
             mNoderef.child("users").child(mUser.getUid()).child("plate11").setValue(cbTestResults);
         }
@@ -513,7 +519,7 @@ public class ColourBlindTest extends AppCompatActivity {
             else
                 result=0;
 
-            CbTestResults cbTestResults = new CbTestResults(plate, Integer.parseInt(guess), correctanswer, result, date);
+            CbTestResults cbTestResults = new CbTestResults(plate, Integer.parseInt(guess), correctanswer, result, date2String);
             //FH (4) Save object to database
             mNoderef.child("users").child(mUser.getUid()).child("plate12").setValue(cbTestResults);
 

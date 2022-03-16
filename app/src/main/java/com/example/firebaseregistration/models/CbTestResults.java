@@ -9,9 +9,9 @@ public class CbTestResults {
     private int answer;
     private int correctAnswer;
     private int result;
-    private Date date;
+    private String date;
 
-    public CbTestResults(int plate, int answer, int correctAnswer, int result, Date date) {
+    public CbTestResults(int plate, int answer, int correctAnswer, int result, String date) {
         this.plate = plate;
         this.answer = answer;
         this.correctAnswer = correctAnswer;
@@ -53,12 +53,18 @@ public class CbTestResults {
         this.result = result;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
+    public CbTestResults(int plate, int answer, int correctAnswer, int result) {
+        this.plate = plate;
+        this.answer = answer;
+        this.correctAnswer = correctAnswer;
+        this.result = result;
+    }
 }
