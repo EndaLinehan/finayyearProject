@@ -13,7 +13,11 @@
         <entry key="..\:/Users/endap/AndroidStudioProjects/finayyearProject/app/src/main/res/layout/activity_colour_blind_test.xml" value="0.12135416666666667" />
         <entry key="..\:/Users/endap/AndroidStudioProjects/finayyearProject/app/src/main/res/layout/activity_eye_tests.xml" value="0.12135416666666667" />
         <entry key="..\:/Users/endap/AndroidStudioProjects/finayyearProject/app/src/main/res/layout/activity_home_page.xml" value="0.11200000000000002" />
-        <entry key="..\:/Users/endap/AndroidStudioProjects/finayyearProject/app/src/main/res/layout/activity_test_results.xml" value="0.536" />
+        <entry key="..\:/Users/endap/AndroidStudioProjects/finayyearProject/app/src/main/res/layout/activity_main2.xml" value="0.10914855072463768" />
+        <entry key="..\:/Users/endap/AndroidStudioProjects/finayyearProject/app/src/main/res/layout/activity_store.xml" value="0.17708333333333334" />
+        <entry key="..\:/Users/endap/AndroidStudioProjects/finayyearProject/app/src/main/res/layout/activity_test_results.xml" value="0.23346303501945526" />
+        <entry key="..\:/Users/endap/AndroidStudioProjects/finayyearProject/app/src/main/res/layout/cbtestresults_layout.xml" value="0.536" />
+        <entry key="..\:/Users/endap/AndroidStudioProjects/finayyearProject/app/src/main/res/layout/row_layout.xml" value="0.2" />
       </map>
     </option>
   </component>
@@ -22,5 +26,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.536" />
+      </ProjectState>
+    </option>
   </component>
 </project>

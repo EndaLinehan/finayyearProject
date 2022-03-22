@@ -2,9 +2,15 @@ package com.example.firebaseregistration;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
+import android.widget.EditText;
+import android.widget.TableLayout;
+import android.widget.TableRow;
 import android.widget.TextView;
 
 import com.example.firebaseregistration.models.CbTestResults;
@@ -24,45 +30,39 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class TestResults extends AppCompatActivity {
+    private FirebaseDatabase database;
     private DatabaseReference mDatabase, mDatabase2;
-    private FirebaseDatabase mRootref;
-    private DatabaseReference mNoderef;
+    private List<CbTestResults> listofResults;
     private FirebaseUser mUser;
-    private TextView tv;
+    RecyclerView tableLayout;
 
 
+    private TextView tv1,tv2,tv3,tv4;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test_results);
-
+        tableLayout = findViewById(R.id.recyclerView);
+        listofResults = new ArrayList<>();
+        database = FirebaseDatabase.getInstance("https://newproject-49f95-default-rtdb.europe-west1.firebasedatabase.app/");
+        mDatabase = database.getReference();
         mUser = FirebaseAuth.getInstance().getCurrentUser();
 
-        mDatabase = FirebaseDatabase.getInstance("https://newproject-49f95-default-rtdb.europe-west1.firebasedatabase.app/").getReference();
-        mDatabase2 = mDatabase.child("users").child(mUser.getUid()).child("plate1");
-
-        mDatabase2.addValueEventListener(new ValueEventListener() {
+        mDatabase.child("users").child(mUser.getUid()).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                HashMap<String, Object> dataMap=(HashMap<String, Object>) snapshot.getValue();
+                Iterable<DataSnapshot> testResults = snapshot.getChildren();
 
-                for(String key : dataMap.keySet()){
-                    Object data = dataMap.get(key);
-                    HashMap<String,Object> testResult = (HashMap<String, Object>) data;
-
-                    CbTestResults cbTestResults= new CbTestResults((int)testResult.get("plate"),(int)testResult.get("answer"),(int)testResult.get("correctAnswer"),(int)testResult.get("result"));
-                    tv = findViewById(R.id.r1b1);
-                    tv.setText(String.valueOf(cbTestResults.getPlate()));
-                    tv = findViewById(R.id.r1b2);
-                    tv.setText(String.valueOf(cbTestResults.getAnswer()));
-                    tv = findViewById(R.id.r1b3);
-                    tv.setText(String.valueOf(cbTestResults.getCorrectAnswer()));
-                    tv = findViewById(R.id.r1b4);
-                    tv.setText(String.valueOf(cbTestResults.getResult()));
-
+                for (DataSnapshot ds:testResults) {
+                    CbTestResults value = ds.getValue(CbTestResults.class);
+                    listofResults.add(value);
                 }
+                Adapter adapter = new Adapter(TestResults.this, (ArrayList<CbTestResults>) listofResults);
+                tableLayout.setAdapter(adapter);
+                tableLayout.setLayoutManager(new LinearLayoutManager(TestResults.this));
             }
 
             @Override
@@ -70,5 +70,7 @@ public class TestResults extends AppCompatActivity {
 
             }
         });
+
     }
+
 }
