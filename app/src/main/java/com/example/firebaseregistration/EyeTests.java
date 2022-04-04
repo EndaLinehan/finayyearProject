@@ -9,7 +9,7 @@ import android.widget.Button;
 
 public class EyeTests extends AppCompatActivity {
 
-    private Button cbTest;
+    private Button cbTest , vaTest , dcTest;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +24,26 @@ public class EyeTests extends AppCompatActivity {
             }
 
 
+        });
+
+        vaTest = findViewById(R.id.visualAcuityTest);
+        vaTest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= new Intent(EyeTests.this, VisualAcuityTest.class);
+                startActivity(intent);
+            }
+
+
+        });
+
+        dcTest = findViewById(R.id.duochromeTest);
+        dcTest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent= new Intent(EyeTests.this, DuoChromeTest.class);
+                startActivity(intent);
+            }
         });
     }
 }

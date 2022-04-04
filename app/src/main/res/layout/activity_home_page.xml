@@ -24,14 +24,6 @@
         android:id="@+id/include"
         layout="@layout/content_home_page" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="670dp"
@@ -114,11 +106,12 @@
                 android:orientation="vertical"></LinearLayout>
 
             <Button
+                android:id="@+id/localOpticiansBtn"
                 android:layout_width="209dp"
                 android:layout_height="64dp"
                 android:layout_gravity="center"
                 android:background="#FFFF"
-                android:text="Check out"
+                android:text="Local Opticians"
                 android:textColor="@color/colorPrimary"
                 android:textSize="25dp"
                 android:textStyle="bold"></Button>

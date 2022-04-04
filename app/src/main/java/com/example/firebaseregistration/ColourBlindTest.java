@@ -368,7 +368,7 @@ public class ColourBlindTest extends AppCompatActivity {
 
             //FH (4) Save object to database
 
-            mNoderef.child("users").child(mUser.getUid()).child("plate1").setValue(cbTestResults);
+            mNoderef.child("users").child(mUser.getUid()).child("Colour Blind Test").child("plate 1").setValue(cbTestResults);
         }
         else if (counter == 3) {
             plate = 2;
@@ -381,7 +381,7 @@ public class ColourBlindTest extends AppCompatActivity {
 
             CbTestResults cbTestResults = new CbTestResults(plate, Integer.parseInt(guess), correctanswer, result, date2String);
             //FH (4) Save object to database
-            mNoderef.child("users").child(mUser.getUid()).child("plate2").setValue(cbTestResults);
+            mNoderef.child("users").child(mUser.getUid()).child("Colour Blind Test").child("plate 2").setValue(cbTestResults);
         }
         else if (counter == 4) {
 
@@ -395,7 +395,7 @@ public class ColourBlindTest extends AppCompatActivity {
 
             CbTestResults cbTestResults = new CbTestResults(plate, Integer.parseInt(guess), correctanswer, result, date2String);
             //FH (4) Save object to database
-            mNoderef.child("users").child(mUser.getUid()).child("plate3").setValue(cbTestResults);
+            mNoderef.child("users").child(mUser.getUid()).child("Colour Blind Test").child("plate 3").setValue(cbTestResults);
         }
         else if (counter == 5) {
 
@@ -409,7 +409,7 @@ public class ColourBlindTest extends AppCompatActivity {
 
             CbTestResults cbTestResults = new CbTestResults(plate, Integer.parseInt(guess), correctanswer, result, date2String);
             //FH (4) Save object to database
-            mNoderef.child("users").child(mUser.getUid()).child("plate4").setValue(cbTestResults);
+            mNoderef.child("users").child(mUser.getUid()).child("Colour Blind Test").child("plate 4").setValue(cbTestResults);
         }
         else if (counter == 6) {
 
@@ -423,7 +423,7 @@ public class ColourBlindTest extends AppCompatActivity {
 
             CbTestResults cbTestResults = new CbTestResults(plate, Integer.parseInt(guess), correctanswer, result, date2String);
             //FH (4) Save object to database
-            mNoderef.child("users").child(mUser.getUid()).child("plate5").setValue(cbTestResults);
+            mNoderef.child("users").child(mUser.getUid()).child("Colour Blind Test").child("plate 5").setValue(cbTestResults);
         }
         else if (counter == 7) {
 
@@ -437,7 +437,7 @@ public class ColourBlindTest extends AppCompatActivity {
 
             CbTestResults cbTestResults = new CbTestResults(plate, Integer.parseInt(guess), correctanswer, result, date2String);
             //FH (4) Save object to database
-            mNoderef.child("users").child(mUser.getUid()).child("plate6").setValue(cbTestResults);
+            mNoderef.child("users").child(mUser.getUid()).child("Colour Blind Test").child("plate 6").setValue(cbTestResults);
         }
         else if (counter == 8) {
 
@@ -451,7 +451,7 @@ public class ColourBlindTest extends AppCompatActivity {
 
             CbTestResults cbTestResults = new CbTestResults(plate, Integer.parseInt(guess), correctanswer, result, date2String);
             //FH (4) Save object to database
-            mNoderef.child("users").child(mUser.getUid()).child("plate7").setValue(cbTestResults);
+            mNoderef.child("users").child(mUser.getUid()).child("Colour Blind Test").child("plate 7").setValue(cbTestResults);
         }
         else if (counter == 9) {
 
@@ -465,7 +465,7 @@ public class ColourBlindTest extends AppCompatActivity {
 
             CbTestResults cbTestResults = new CbTestResults(plate, Integer.parseInt(guess), correctanswer, result, date2String);
             //FH (4) Save object to database
-            mNoderef.child("users").child(mUser.getUid()).child("plate8").setValue(cbTestResults);
+            mNoderef.child("users").child(mUser.getUid()).child("Colour Blind Test").child("plate 8").setValue(cbTestResults);
         }
         else if (counter == 10) {
 
@@ -479,7 +479,7 @@ public class ColourBlindTest extends AppCompatActivity {
 
             CbTestResults cbTestResults = new CbTestResults(plate, Integer.parseInt(guess), correctanswer, result, date2String);
             //FH (4) Save object to database
-            mNoderef.child("users").child(mUser.getUid()).child("plate9").setValue(cbTestResults);
+            mNoderef.child("users").child(mUser.getUid()).child("Colour Blind Test").child("plate 9").setValue(cbTestResults);
         }
         else if (counter == 11) {
 
@@ -493,7 +493,7 @@ public class ColourBlindTest extends AppCompatActivity {
 
             CbTestResults cbTestResults = new CbTestResults(plate, Integer.parseInt(guess), correctanswer, result, date2String);
             //FH (4) Save object to database
-            mNoderef.child("users").child(mUser.getUid()).child("plate10").setValue(cbTestResults);
+            mNoderef.child("users").child(mUser.getUid()).child("Colour Blind Test").child("plate 10").setValue(cbTestResults);
         }
         else if (counter == 12) {
 
@@ -507,7 +507,7 @@ public class ColourBlindTest extends AppCompatActivity {
 
             CbTestResults cbTestResults = new CbTestResults(plate, Integer.parseInt(guess), correctanswer, result, date2String);
             //FH (4) Save object to database
-            mNoderef.child("users").child(mUser.getUid()).child("plate11").setValue(cbTestResults);
+            mNoderef.child("users").child(mUser.getUid()).child("Colour Blind Test").child("plate 11").setValue(cbTestResults);
         }
         else if (counter == 13) {
 
@@ -521,7 +521,7 @@ public class ColourBlindTest extends AppCompatActivity {
 
             CbTestResults cbTestResults = new CbTestResults(plate, Integer.parseInt(guess), correctanswer, result, date2String);
             //FH (4) Save object to database
-            mNoderef.child("users").child(mUser.getUid()).child("plate12").setValue(cbTestResults);
+            mNoderef.child("users").child(mUser.getUid()).child("Colour Blind Test").child("plate 12").setValue(cbTestResults);
 
         }
         //etc

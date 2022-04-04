@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/androidbackground"
-    tools:context=".EyeTests">
+    tools:context=".TestResults"
+    android:background="@drawable/androidbackground">
 
     <Button
         android:id="@+id/colourblindTest"
@@ -14,45 +14,31 @@
         android:background="@color/colorPrimaryDark"
         android:bottomLeftRadius="100dp"
         android:bottomRightRadius="100dp"
-        android:text="Colour Blind Test"
-        android:textColor="#ffff"
-        android:topLeftRadius="10dp"
-        android:topRightRadius="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/visualAcuityTest"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.634" />
-
-    <Button
-        android:id="@+id/visualAcuityTest"
-        android:layout_width="323dp"
-        android:layout_height="113dp"
-        android:layout_marginBottom="60dp"
-        android:background="@color/colorPrimaryDark"
-        android:bottomLeftRadius="100dp"
-        android:bottomRightRadius="100dp"
-        android:text="Visual Acuity Test"
-        android:textColor="#ffff"
-        android:topLeftRadius="10dp"
-        android:topRightRadius="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/duochromeTest"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/duochromeTest"
-        android:layout_width="323dp"
-        android:layout_height="113dp"
-        android:layout_marginBottom="176dp"
-        android:background="@color/colorPrimaryDark"
-        android:bottomLeftRadius="100dp"
-        android:bottomRightRadius="100dp"
-        android:text="DuoChrome Test"
+        android:text="Colour Blind Test Results"
         android:textColor="#ffff"
         android:topLeftRadius="10dp"
         android:topRightRadius="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.103" />
+
+    <Button
+        android:id="@+id/visualAcuityTest"
+        android:layout_width="323dp"
+        android:layout_height="113dp"
+        android:background="@color/colorPrimaryDark"
+        android:bottomLeftRadius="100dp"
+        android:bottomRightRadius="100dp"
+        android:text="Visual Acuity Test Results"
+        android:textColor="#ffff"
+        android:topLeftRadius="10dp"
+        android:topRightRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/colourblindTest"
+        app:layout_constraintVertical_bias="0.326" />
 </androidx.constraintlayout.widget.ConstraintLayout>

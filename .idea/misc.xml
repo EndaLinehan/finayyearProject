@@ -18,10 +18,18 @@
         <entry key="..\:/Users/endap/AndroidStudioProjects/finayyearProject/app/src/main/res/layout/activity_test_results.xml" value="0.23346303501945526" />
         <entry key="..\:/Users/endap/AndroidStudioProjects/finayyearProject/app/src/main/res/layout/cbtestresults_layout.xml" value="0.536" />
         <entry key="..\:/Users/endap/AndroidStudioProjects/finayyearProject/app/src/main/res/layout/row_layout.xml" value="0.2" />
+        <entry key="..\:/Users/endap/StudioProjects/finayyearProject/app/src/main/res/layout/activity_colour_blind_test.xml" value="0.18541666666666667" />
+        <entry key="..\:/Users/endap/StudioProjects/finayyearProject/app/src/main/res/layout/activity_duo_chrome_test.xml" value="0.25" />
+        <entry key="..\:/Users/endap/StudioProjects/finayyearProject/app/src/main/res/layout/activity_eye_tests.xml" value="0.22" />
+        <entry key="..\:/Users/endap/StudioProjects/finayyearProject/app/src/main/res/layout/activity_home_page.xml" value="0.16168478260869565" />
+        <entry key="..\:/Users/endap/StudioProjects/finayyearProject/app/src/main/res/layout/activity_main2.xml" value="0.16168478260869565" />
+        <entry key="..\:/Users/endap/StudioProjects/finayyearProject/app/src/main/res/layout/activity_test_results.xml" value="0.18229166666666666" />
+        <entry key="..\:/Users/endap/StudioProjects/finayyearProject/app/src/main/res/layout/activity_test_results2.xml" value="0.25" />
+        <entry key="..\:/Users/endap/StudioProjects/finayyearProject/app/src/main/res/layout/activity_visual_acuity_test.xml" value="0.18541666666666667" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
