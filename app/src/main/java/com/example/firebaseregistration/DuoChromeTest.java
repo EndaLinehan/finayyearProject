@@ -10,10 +10,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
+import android.widget.Toolbar;
 import android.widget.ViewFlipper;
 
 import com.example.firebaseregistration.models.DuoChromeTestResults;
-import com.example.firebaseregistration.models.VATestResults;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -31,17 +32,18 @@ import java.util.Date;
 
 public class DuoChromeTest extends AppCompatActivity {
 
-    private Button redBtn, greenBtn;
+
+    private Button redBtn, greenBtn, startBtn;
     private EditText answer;
     private ImageView imageView;
     private String guess = "";
     private StorageReference storageReference;
     private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
     private DatabaseReference databaseReference = firebaseDatabase.getReference();
-    private DatabaseReference imageref = databaseReference.child("Images");
-    private int counter = 0,redCounter=0,greenCounter=0;
+    private int counter = 0, redCounter = 0, greenCounter = 0;
     private ViewFlipper viewFlipper;
-    private Date date= new Date();;
+    private Date date = new Date();
+    ;
     private DatabaseReference mDatabase;
     private FirebaseDatabase mRootref;
     private DatabaseReference mNoderef;
@@ -50,9 +52,7 @@ public class DuoChromeTest extends AppCompatActivity {
 
     private DateFormat df = new SimpleDateFormat("EEE, d MMM yyyy");
     private String date2String = df.format(date);
-
-
-
+    private Toolbar supportActionBar;
 
 
     @Override
@@ -66,6 +66,9 @@ public class DuoChromeTest extends AppCompatActivity {
         viewFlipper = (ViewFlipper) findViewById(R.id.viewFlipper);
         redBtn = findViewById(R.id.redBtn);
         greenBtn = findViewById(R.id.greenBtn);
+        startBtn = findViewById(R.id.beginBtn);
+        redBtn.setVisibility(View.GONE);
+        greenBtn.setVisibility(View.GONE);
         mUser = FirebaseAuth.getInstance().getCurrentUser();
 
         mRootref = FirebaseDatabase.getInstance("https://newproject-49f95-default-rtdb.europe-west1.firebasedatabase.app/");
@@ -73,41 +76,145 @@ public class DuoChromeTest extends AppCompatActivity {
 
         mNoderef = mRootref.getReference();
 
-        redBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                counter++;
+        if (counter == 0) {
+            imageView = findViewById(R.id.imageView0);
 
+            //ENDA change this to the correct location/folder file for your database
+            storageReference = FirebaseStorage.getInstance().getReference().child("Duochrome Test/Image 0.jpg");
 
-                loadImages();
-                viewFlipper.showNext();
-                redCounter++;
-                getValues();
-
-                if(counter == 4){
-//                    redBtn.setText("Finish");
-//                    greenBtn.setText("Finish");
-                }else if(counter == 5){
-                    Intent intent= new Intent(DuoChromeTest.this, EyeTests.class);
-                    startActivity(intent);
-                }
+            try {
+                File local = File.createTempFile("Image 0", "jpg");
+                storageReference.getFile(local)
+                        .addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
+                            @Override
+                            public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
+                                Bitmap bitmap = BitmapFactory.decodeFile(local.getAbsolutePath());
+                                imageView.setImageBitmap(bitmap);
+                            }
+                        });
+            } catch (IOException e) {
+                e.printStackTrace();
             }
-        });
+        }
 
-        greenBtn.setOnClickListener(new View.OnClickListener() {
+
+        startBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                counter++;
 
-                loadImages();
-                viewFlipper.showNext();
-                greenCounter++;
-                getValues();
 
-                if(counter == 4){
 
-                }else if(counter == 5){
-                    Intent intent= new Intent(DuoChromeTest.this, EyeTests.class);
+
+
+                    counter++;
+                    startBtn.setVisibility(View.GONE);
+                    redBtn.setVisibility(View.VISIBLE);
+                    greenBtn.setVisibility(View.VISIBLE);
+
+                    loadImages();
+                    viewFlipper.showNext();
+
+
+                    redBtn.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            counter++;
+
+
+                            loadImages();
+                            viewFlipper.showNext();
+                            redCounter++;
+                            getValues();
+
+                            if (counter == 5) {
+                                imageView = findViewById(R.id.imageView0);
+
+                                //ENDA change this to the correct location/folder file for your database
+                                storageReference = FirebaseStorage.getInstance().getReference().child("Duochrome Test/Image 5.jpg");
+
+                                startBtn.setVisibility(View.VISIBLE);
+                                redBtn.setVisibility(View.GONE);
+                                greenBtn.setVisibility(View.GONE);
+                                startBtn.setText("Eyes Swapped");
+
+                                try {
+                                    File local = File.createTempFile("Image 5", "jpg");
+                                    storageReference.getFile(local)
+                                            .addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
+                                                @Override
+                                                public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
+                                                    Bitmap bitmap = BitmapFactory.decodeFile(local.getAbsolutePath());
+                                                    imageView.setImageBitmap(bitmap);
+                                                }
+                                            });
+                                } catch (IOException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                            if (counter == 10) {
+
+                                redBtn.setVisibility(View.GONE);
+                                greenBtn.setVisibility(View.GONE);
+                                startBtn.setText("Finish!");
+                                startBtn.setVisibility(View.VISIBLE);
+
+                            } else if (counter == 11) {
+                                Intent intent = new Intent(DuoChromeTest.this, EyeTests.class);
+                                startActivity(intent);
+                            }
+                        }
+                    });
+
+                    greenBtn.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            counter++;
+
+                            loadImages();
+                            viewFlipper.showNext();
+                            greenCounter++;
+                            Toast.makeText(DuoChromeTest.this, String.valueOf(greenCounter), Toast.LENGTH_SHORT).show();
+                            getValues();
+
+                            if (counter == 5) {
+                                imageView = findViewById(R.id.imageView0);
+
+                                //ENDA change this to the correct location/folder file for your database
+                                storageReference = FirebaseStorage.getInstance().getReference().child("Duochrome Test/Image 5.jpg");
+
+                                startBtn.setVisibility(View.VISIBLE);
+                                redBtn.setVisibility(View.GONE);
+                                greenBtn.setVisibility(View.GONE);
+                                startBtn.setText("Eyes Swapped");
+
+                                try {
+                                    File local = File.createTempFile("Image 5", "jpg");
+                                    storageReference.getFile(local)
+                                            .addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
+                                                @Override
+                                                public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
+                                                    Bitmap bitmap = BitmapFactory.decodeFile(local.getAbsolutePath());
+                                                    imageView.setImageBitmap(bitmap);
+                                                }
+                                            });
+                                } catch (IOException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                            if (counter == 10) {
+
+                                redBtn.setVisibility(View.GONE);
+                                greenBtn.setVisibility(View.GONE);
+                                startBtn.setText("Finish!");
+                                startBtn.setVisibility(View.VISIBLE);
+
+                            }
+
+                        }
+                    });
+
+                if (counter == 11) {
+                    Intent intent = new Intent(DuoChromeTest.this, EyeTests.class);
                     startActivity(intent);
                 }
             }
@@ -115,9 +222,9 @@ public class DuoChromeTest extends AppCompatActivity {
         getValues();
     }
 
-    public void loadImages(){
-        if(counter ==0){}
-        else if (counter == 1) {
+
+    public void loadImages() {
+        if (counter == 1) {
             imageView = findViewById(R.id.imageView1);
 
             //ENDA change this to the correct location/folder file for your database
@@ -136,8 +243,7 @@ public class DuoChromeTest extends AppCompatActivity {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        }
-        else if (counter == 2) {
+        } else if (counter == 2) {
             imageView = findViewById(R.id.imageView2);
             storageReference = FirebaseStorage.getInstance().getReference().child("Duochrome Test/Image 2.png");
             try {
@@ -154,8 +260,7 @@ public class DuoChromeTest extends AppCompatActivity {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        }
-        else if (counter == 3) {
+        } else if (counter == 3) {
             imageView = findViewById(R.id.imageView3);
             storageReference = FirebaseStorage.getInstance().getReference().child("Duochrome Test/Image 3.jpg");
             try {
@@ -172,8 +277,7 @@ public class DuoChromeTest extends AppCompatActivity {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        }
-        else if (counter == 4) {
+        } else if (counter == 4) {
             imageView = findViewById(R.id.imageView4);
             storageReference = FirebaseStorage.getInstance().getReference().child("Duochrome Test/Image 4.jpg");
             try {
@@ -194,20 +298,19 @@ public class DuoChromeTest extends AppCompatActivity {
 
     }
 
-    public void getValues(){
-        String eyesite="";
-        if(greenCounter>redCounter){
+    public void getValues() {
+        String eyesite = "";
+        if (greenCounter > redCounter) {
             eyesite = "You are likely to be short sited";
-        }else if(redCounter>greenCounter){
+        } else if (redCounter > greenCounter) {
             eyesite = "You are likely to be long sited";
-        }
-        else{
-            eyesite = "You are not likely to be short or long sited";
+        } else {
+            eyesite = "You are neither short or long sited";
         }
 
-        DuoChromeTestResults dcTestResults = new DuoChromeTestResults(eyesite,date2String);
+        DuoChromeTestResults dcTestResults = new DuoChromeTestResults(eyesite, date2String);
 
-        mNoderef.child("users").child(mUser.getUid()).child("DuoChrome Test").child("Result").setValue(dcTestResults);
+        mNoderef.child("users").child(mUser.getUid()).child("DuoChrome Test").child(date2String).setValue(dcTestResults);
 
     }
 

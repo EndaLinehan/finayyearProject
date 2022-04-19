@@ -22,11 +22,12 @@
 
     <include
         android:id="@+id/include"
-        layout="@layout/content_home_page" />
+        layout="@layout/content_home_page"
+        android:layout_height="759dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="670dp"
+        android:layout_height="621dp"
         android:background="@drawable/androidbackground"
         android:orientation="vertical"
         app:layout_anchor="@+id/include"

@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class TestResults extends AppCompatActivity {
-    private Button cbTest , vaTest;
+    private Button cbTest , vaTest, duoTest;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,11 +29,20 @@ public class TestResults extends AppCompatActivity {
         vaTest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent= new Intent(TestResults.this, VisualAcuityTest.class);
+                Intent intent= new Intent(TestResults.this, VisualAcuityResults.class);
                 startActivity(intent);
             }
 
 
+        });
+
+        duoTest = findViewById(R.id.duochromeTest);
+        duoTest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent= new Intent(TestResults.this, DuoTestResults.class);
+                startActivity(intent);
+            }
         });
     }
 }

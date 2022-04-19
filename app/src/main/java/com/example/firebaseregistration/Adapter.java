@@ -47,7 +47,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
         return cbTestResults.size();
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder{
+    public static class MyViewHolder extends RecyclerView.ViewHolder{
         TextView tv1 ,tv2 ,tv3 ,tv4;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);

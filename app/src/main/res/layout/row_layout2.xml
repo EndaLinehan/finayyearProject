@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="200dp"
+        android:layout_height="324dp"
+        android:layout_marginStart="4dp"
+        android:paddingTop="20dp"
+        app:cardBackgroundColor="#FFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="206dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:background="#1c263b"
+            android:padding="15dp"
+            android:paddingBottom="15dp">
+
+
+            <TextView
+                android:id="@+id/lefteyeTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:gravity="center_horizontal"
+                android:inputType="textPersonName"
+                android:text="Left Eye"
+                android:textSize="25dp"
+                android:textColor="#a6602e"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/textView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.533"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/dateTV"
+                android:layout_width="57dp"
+                android:layout_height="27dp"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="Date:"
+                android:textAlignment="center"
+                android:textSize="10dp"
+                android:textColor="#a6602e"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/textView"
+                app:layout_constraintEnd_toStartOf="@+id/dateid"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/dateid"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/dateid"
+                android:layout_width="109dp"
+                android:layout_height="31dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginBottom="212dp"
+                android:ems="10"
+                android:gravity="center|center_horizontal"
+                android:hint="Name"
+                android:inputType="textPersonName"
+                android:textColor="#a6602e"
+                android:textSize="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:ignore="DuplicateIds,MissingConstraints" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="76dp"
+                android:layout_height="27dp"
+                android:layout_marginBottom="180dp"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="Correct Answer:"
+                android:textAlignment="center"
+                android:textSize="10dp"
+                android:textColor="#a6602e"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/correctAnswerid"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/correctAnswerid"
+                android:layout_width="78dp"
+                android:layout_height="32dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="176dp"
+                android:ems="10"
+                android:gravity="center|center_horizontal"
+                android:hint="Name"
+                android:inputType="textPersonName"
+                android:textColor="#a6602e"
+                android:textSize="15dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/answerGivenTV"
+                android:layout_width="76dp"
+                android:layout_height="27dp"
+                android:layout_marginBottom="136dp"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="Answer Given:"
+                android:textAlignment="center"
+                android:textSize="10dp"
+                android:textColor="#a6602e"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/answerGivenID"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/answerGivenID"
+                android:layout_width="78dp"
+                android:layout_height="30dp"
+                android:layout_marginEnd="12dp"
+                android:layout_marginBottom="52dp"
+                android:ems="10"
+                android:gravity="center|center_horizontal"
+                android:hint="correct answer"
+                android:inputType="text"
+                android:textColor="#a6602e"
+                android:textSize="15dp"
+                app:layout_constraintBottom_toTopOf="@+id/TextResult"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/correctAnswerid"
+                app:layout_constraintVertical_bias="0.736"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="67dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginBottom="80dp"
+                android:gravity="center"
+                android:text="Result:"
+                android:textColor="#a6602e"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/TextResult"
+                android:layout_width="108dp"
+                android:layout_height="71dp"
+                android:layout_marginBottom="4dp"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="Result"
+                android:textColor="#a6602e"
+                android:inputType="text"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView2"
+        android:layout_width="205dp"
+        android:layout_height="322dp"
+        android:paddingTop="20dp"
+        app:cardBackgroundColor="#FFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:background="#1c263b"
+            android:padding="15dp"
+            android:paddingBottom="15dp">
+
+
+            <TextView
+                android:id="@+id/righteyeTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:gravity="center_horizontal"
+                android:inputType="textPersonName"
+                android:text="Right Eye"
+                android:textSize="25dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:textColor="#a6602e"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/dateTV1"
+                android:layout_width="57dp"
+                android:layout_height="27dp"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="Date:"
+                android:textAlignment="center"
+                android:textSize="10dp"
+                android:textColor="#a6602e"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/textView1"
+                app:layout_constraintEnd_toStartOf="@+id/dateid2"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/dateid2"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/dateid2"
+                android:layout_width="60dp"
+                android:layout_height="34dp"
+                android:layout_marginEnd="52dp"
+                android:layout_marginBottom="220dp"
+                android:ems="10"
+                android:gravity="center|center_horizontal"
+                android:hint="Name"
+                android:inputType="textPersonName"
+                android:textColor="#a6602e"
+                android:textSize="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:ignore="DuplicateIds,MissingConstraints" />
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="76dp"
+                android:layout_height="27dp"
+                android:layout_marginBottom="180dp"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="Correct Answer:"
+                android:textAlignment="center"
+                android:textSize="10dp"
+                android:textColor="#a6602e"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/correctAnswerid2"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/correctAnswerid2"
+                android:layout_width="78dp"
+                android:layout_height="32dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="176dp"
+                android:ems="10"
+                android:gravity="center|center_horizontal"
+                android:hint="Name"
+                android:inputType="textPersonName"
+                android:textColor="#a6602e"
+                android:textSize="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/answerGivenTV1"
+                android:layout_width="76dp"
+                android:layout_height="27dp"
+                android:layout_marginBottom="136dp"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="Answer Given:"
+                android:textAlignment="center"
+                android:textSize="10dp"
+                android:textColor="#a6602e"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/answerGivenID2"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/answerGivenID2"
+                android:layout_width="78dp"
+                android:layout_height="30dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="52dp"
+                android:ems="10"
+                android:gravity="center|center_horizontal"
+                android:hint="correct answer"
+                android:inputType="text"
+                android:textColor="#a6602e"
+                android:textSize="8dp"
+                app:layout_constraintBottom_toTopOf="@+id/editTextResult2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.993"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="67dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginBottom="80dp"
+                android:gravity="center"
+                android:text="Result:"
+                android:textColor="#a6602e"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/editTextResult2"
+                android:layout_width="108dp"
+                android:layout_height="71dp"
+                android:layout_marginBottom="4dp"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="Result"
+                android:textColor="#a6602e"
+                android:inputType="text"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,6 +7,21 @@
     tools:context=".TestResults"
     android:background="@drawable/androidbackground">
 
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        tools:ignore="MissingConstraints">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
     <Button
         android:id="@+id/colourblindTest"
         android:layout_width="323dp"
@@ -40,5 +55,22 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/colourblindTest"
-        app:layout_constraintVertical_bias="0.326" />
+        app:layout_constraintVertical_bias="0.149" />
+
+    <Button
+        android:id="@+id/duochromeTest"
+        android:layout_width="323dp"
+        android:layout_height="113dp"
+        android:background="@color/colorPrimaryDark"
+        android:bottomLeftRadius="100dp"
+        android:bottomRightRadius="100dp"
+        android:text="Duo Chrome Test Results"
+        android:textColor="#ffff"
+        android:topLeftRadius="10dp"
+        android:topRightRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/visualAcuityTest"
+        app:layout_constraintVertical_bias="0.259" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".VisualAcuityResults">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Dates of Tests"
+        android:gravity="center"
+        android:textSize="30sp"
+        android:textColor="@android:color/black"
+        android:id="@+id/tv1"/>
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinner"
+        android:padding="10dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/androidbackground"
+        android:gravity="top"
+        android:stretchColumns="*"
+        tools:layout_editor_absoluteX="186dp"
+        tools:layout_editor_absoluteY="19dp"
+        android:paddingBottom="15dp">
+
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+
+</LinearLayout>

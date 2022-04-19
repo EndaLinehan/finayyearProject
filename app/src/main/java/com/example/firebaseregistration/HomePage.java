@@ -13,7 +13,7 @@ import android.widget.Toast;
 public class HomePage extends AppCompatActivity {
 
     private Button eyetests;
-    private Button shop,testResults;
+    private Button shop,testResults,localOpticiansBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +51,16 @@ public class HomePage extends AppCompatActivity {
                 Intent intent = new Intent(HomePage.this, TestResults.class);
                 startActivity(intent);
 
+            }
+        });
+
+        localOpticiansBtn = findViewById(R.id.localOpticiansBtn);
+
+        localOpticiansBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomePage.this,MapsActivity.class);
+                startActivity(intent);
             }
         });
     }
