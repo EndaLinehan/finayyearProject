@@ -7,20 +7,7 @@
     android:background="#000"
     tools:context=".DuoChromeTest">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay"
-        tools:ignore="MissingConstraints">
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
-
-    </com.google.android.material.appbar.AppBarLayout>
 
     <ViewFlipper
         android:id="@+id/viewFlipper"
@@ -84,8 +71,8 @@
         android:id="@+id/beginBtn"
         android:layout_width="114dp"
         android:layout_height="76dp"
-        android:layout_marginEnd="156dp"
-        android:layout_marginBottom="48dp"
+        android:layout_marginEnd="148dp"
+        android:layout_marginBottom="120dp"
         android:text="Start"
         app:layout_constraintBottom_toTopOf="@+id/redBtn"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -112,5 +99,17 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_gravity="bottom"
+        android:background="#FFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_navigation_bar"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

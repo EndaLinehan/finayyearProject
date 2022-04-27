@@ -7,25 +7,12 @@
     android:background="@drawable/androidbackground"
     tools:context=".EyeTests">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay"
-        tools:ignore="MissingConstraints">
-
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
-
-    </com.google.android.material.appbar.AppBarLayout>
 
     <Button
         android:id="@+id/colourblindTest"
         android:layout_width="323dp"
         android:layout_height="113dp"
+        android:layout_marginBottom="52dp"
         android:background="@color/colorPrimaryDark"
         android:bottomLeftRadius="100dp"
         android:bottomRightRadius="100dp"
@@ -43,7 +30,7 @@
         android:id="@+id/visualAcuityTest"
         android:layout_width="323dp"
         android:layout_height="113dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="56dp"
         android:background="@color/colorPrimaryDark"
         android:bottomLeftRadius="100dp"
         android:bottomRightRadius="100dp"
@@ -70,4 +57,18 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_gravity="bottom"
+        android:background="#FFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_navigation_bar"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>

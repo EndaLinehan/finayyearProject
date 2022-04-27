@@ -55,9 +55,7 @@
         <activity android:name=".ColourBlindTest" />
         <activity android:name=".EyeTests" />
         <activity
-            android:name=".HomePage"
-            android:label="@string/title_activity_home_page"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:name=".HomePage"/>
         <activity android:name=".MainActivity2" />
         <activity android:name=".MainActivity">
             <intent-filter>

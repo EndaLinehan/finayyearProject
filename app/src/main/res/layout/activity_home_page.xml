@@ -6,28 +6,17 @@
     android:layout_height="match_parent"
     tools:context=".HomePage">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
-
-    </com.google.android.material.appbar.AppBarLayout>
 
     <include
         android:id="@+id/include"
         layout="@layout/content_home_page"
-        android:layout_height="759dp" />
+        android:layout_height="759dp"
+        android:layout_width="match_parent" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="621dp"
+        android:layout_height="match_parent"
         android:background="@drawable/androidbackground"
         android:orientation="vertical"
         app:layout_anchor="@+id/include"
@@ -150,4 +139,16 @@
 
     </LinearLayout>
 
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_gravity="bottom"
+        android:background="#FFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_navigation_bar"
+        />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

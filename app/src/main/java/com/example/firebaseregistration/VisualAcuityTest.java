@@ -1,11 +1,13 @@
 package com.example.firebaseregistration;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,6 +17,8 @@ import android.widget.ViewFlipper;
 
 import com.example.firebaseregistration.models.VATestResults;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
@@ -53,6 +57,7 @@ public class VisualAcuityTest extends AppCompatActivity {
 
     private DateFormat df = new SimpleDateFormat("EEE, d MMM yyyy");
     private String date2String = df.format(date);
+    private BottomNavigationView btmNavbar;
 
 
     private VATestResults[] vaTestResults;
@@ -61,6 +66,9 @@ public class VisualAcuityTest extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_visual_acuity_test);
+
+        btmNavbar = findViewById(R.id.bottomNavigationView);
+        btmNavbar.setOnItemSelectedListener(navBar);
 
         viewFlipper = (ViewFlipper) findViewById(R.id.viewFlipper);
         nextButton = findViewById(R.id.submitBtn);
@@ -878,4 +886,34 @@ public class VisualAcuityTest extends AppCompatActivity {
 
 
     }
+
+    private NavigationBarView.OnItemSelectedListener navBar = new NavigationBarView.OnItemSelectedListener() {
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+            switch(item.getItemId()){
+                case R.id.eyeTests:
+                    Intent intent = new Intent(VisualAcuityTest.this, EyeTests.class);
+                    startActivity(intent);
+                    break;
+
+                case R.id.map:
+                    Intent intent1 = new Intent(VisualAcuityTest.this, MapsActivity.class);
+                    startActivity(intent1);
+                    break;
+
+                case R.id.testResults:
+                    Intent intent2 = new Intent(VisualAcuityTest.this, TestResults.class);
+                    startActivity(intent2);
+                    break;
+
+                case R.id.home:
+                    Intent intent3 = new Intent(VisualAcuityTest.this, HomePage.class);
+                    startActivity(intent3);
+                    break;
+            }
+            return false;
+        }
+    };
+
 }

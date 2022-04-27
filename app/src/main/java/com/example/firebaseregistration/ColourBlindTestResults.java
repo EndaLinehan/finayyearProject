@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.firebaseregistration.models.CbTestResults;
 import com.google.firebase.auth.FirebaseAuth;
@@ -26,6 +27,7 @@ public class ColourBlindTestResults extends AppCompatActivity {
     private List<CbTestResults> listofResults;
     private FirebaseUser mUser;
     RecyclerView tableLayout;
+    private String datechild;
 
 
     private TextView tv1,tv2,tv3,tv4;
@@ -45,12 +47,28 @@ public class ColourBlindTestResults extends AppCompatActivity {
                 Iterable<DataSnapshot> testResults = snapshot.getChildren();
 
                 for (DataSnapshot ds:testResults) {
-                    CbTestResults value = ds.getValue(CbTestResults.class);
-                    listofResults.add(value);
+                    datechild = ds.getKey();
                 }
-                Adapter adapter = new Adapter(ColourBlindTestResults.this, (ArrayList<CbTestResults>) listofResults);
-                tableLayout.setAdapter(adapter);
-                tableLayout.setLayoutManager(new LinearLayoutManager(ColourBlindTestResults.this));
+                    mDatabase.child("users").child(mUser.getUid()).child("Colour Blind Test").child(datechild).addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            Iterable<DataSnapshot> testResults = snapshot.getChildren();
+
+                            for (DataSnapshot as:testResults) {
+                                CbTestResults value = as.getValue(CbTestResults.class);
+                                listofResults.add(value);
+                            }
+                            Adapter adapter = new Adapter(ColourBlindTestResults.this, (ArrayList<CbTestResults>) listofResults);
+                            tableLayout.setAdapter(adapter);
+                            tableLayout.setLayoutManager(new LinearLayoutManager(ColourBlindTestResults.this));
+
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
+                        }
+                    });
             }
 
             @Override

@@ -8,6 +8,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.provider.ContactsContract;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -18,6 +19,8 @@ import android.widget.ViewFlipper;
 import com.example.firebaseregistration.models.CbTestResults;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
@@ -63,7 +66,7 @@ public class ColourBlindTest extends AppCompatActivity {
 
     private DateFormat df = new SimpleDateFormat("EEE, d MMM yyyy");
     private String date2String = df.format(date);
-
+    private BottomNavigationView btmNavbar;
 
 
     //FH (1) need an array of CBTestResults objects
@@ -74,6 +77,11 @@ public class ColourBlindTest extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_colour_blind_test);
+
+        btmNavbar = findViewById(R.id.bottomNavigationView);
+        btmNavbar.setOnItemSelectedListener(navBar);
+
+
         viewFlipper = (ViewFlipper) findViewById(R.id.viewFlipper);
         nextButton = findViewById(R.id.cbButtonAnswer);
         mUser = FirebaseAuth.getInstance().getCurrentUser();
@@ -89,6 +97,9 @@ public class ColourBlindTest extends AppCompatActivity {
         imageView = findViewById(R.id.imageView1);
         imageView.setImageResource(R.drawable.cbtestimage);
 
+
+        answer = (EditText) findViewById(R.id.cbanswer);
+        answer.setVisibility(View.GONE);
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -96,6 +107,7 @@ public class ColourBlindTest extends AppCompatActivity {
                 nextButton.setText("Next");
                 counter++;
 
+                answer.setVisibility(View.VISIBLE);
                 //load images counter
                 loadImages();
                 viewFlipper.showNext();
@@ -368,7 +380,7 @@ public class ColourBlindTest extends AppCompatActivity {
 
             //FH (4) Save object to database
 
-            mNoderef.child("users").child(mUser.getUid()).child("Colour Blind Test").child("plate 1").setValue(cbTestResults);
+            mNoderef.child("users").child(mUser.getUid()).child("Colour Blind Test").child(date2String).child("plate 1").setValue(cbTestResults);
         }
         else if (counter == 3) {
             plate = 2;
@@ -381,7 +393,7 @@ public class ColourBlindTest extends AppCompatActivity {
 
             CbTestResults cbTestResults = new CbTestResults(plate, Integer.parseInt(guess), correctanswer, result, date2String);
             //FH (4) Save object to database
-            mNoderef.child("users").child(mUser.getUid()).child("Colour Blind Test").child("plate 2").setValue(cbTestResults);
+            mNoderef.child("users").child(mUser.getUid()).child("Colour Blind Test").child(date2String).child("plate 2").setValue(cbTestResults);
         }
         else if (counter == 4) {
 
@@ -395,7 +407,7 @@ public class ColourBlindTest extends AppCompatActivity {
 
             CbTestResults cbTestResults = new CbTestResults(plate, Integer.parseInt(guess), correctanswer, result, date2String);
             //FH (4) Save object to database
-            mNoderef.child("users").child(mUser.getUid()).child("Colour Blind Test").child("plate 3").setValue(cbTestResults);
+            mNoderef.child("users").child(mUser.getUid()).child("Colour Blind Test").child(date2String).child("plate 3").setValue(cbTestResults);
         }
         else if (counter == 5) {
 
@@ -409,7 +421,7 @@ public class ColourBlindTest extends AppCompatActivity {
 
             CbTestResults cbTestResults = new CbTestResults(plate, Integer.parseInt(guess), correctanswer, result, date2String);
             //FH (4) Save object to database
-            mNoderef.child("users").child(mUser.getUid()).child("Colour Blind Test").child("plate 4").setValue(cbTestResults);
+            mNoderef.child("users").child(mUser.getUid()).child("Colour Blind Test").child(date2String).child("plate 4").setValue(cbTestResults);
         }
         else if (counter == 6) {
 
@@ -423,7 +435,7 @@ public class ColourBlindTest extends AppCompatActivity {
 
             CbTestResults cbTestResults = new CbTestResults(plate, Integer.parseInt(guess), correctanswer, result, date2String);
             //FH (4) Save object to database
-            mNoderef.child("users").child(mUser.getUid()).child("Colour Blind Test").child("plate 5").setValue(cbTestResults);
+            mNoderef.child("users").child(mUser.getUid()).child("Colour Blind Test").child(date2String).child("plate 5").setValue(cbTestResults);
         }
         else if (counter == 7) {
 
@@ -437,7 +449,7 @@ public class ColourBlindTest extends AppCompatActivity {
 
             CbTestResults cbTestResults = new CbTestResults(plate, Integer.parseInt(guess), correctanswer, result, date2String);
             //FH (4) Save object to database
-            mNoderef.child("users").child(mUser.getUid()).child("Colour Blind Test").child("plate 6").setValue(cbTestResults);
+            mNoderef.child("users").child(mUser.getUid()).child("Colour Blind Test").child(date2String).child("plate 6").setValue(cbTestResults);
         }
         else if (counter == 8) {
 
@@ -451,7 +463,7 @@ public class ColourBlindTest extends AppCompatActivity {
 
             CbTestResults cbTestResults = new CbTestResults(plate, Integer.parseInt(guess), correctanswer, result, date2String);
             //FH (4) Save object to database
-            mNoderef.child("users").child(mUser.getUid()).child("Colour Blind Test").child("plate 7").setValue(cbTestResults);
+            mNoderef.child("users").child(mUser.getUid()).child("Colour Blind Test").child(date2String).child("plate 7").setValue(cbTestResults);
         }
         else if (counter == 9) {
 
@@ -465,7 +477,7 @@ public class ColourBlindTest extends AppCompatActivity {
 
             CbTestResults cbTestResults = new CbTestResults(plate, Integer.parseInt(guess), correctanswer, result, date2String);
             //FH (4) Save object to database
-            mNoderef.child("users").child(mUser.getUid()).child("Colour Blind Test").child("plate 8").setValue(cbTestResults);
+            mNoderef.child("users").child(mUser.getUid()).child("Colour Blind Test").child(date2String).child("plate 8").setValue(cbTestResults);
         }
         else if (counter == 10) {
 
@@ -479,7 +491,7 @@ public class ColourBlindTest extends AppCompatActivity {
 
             CbTestResults cbTestResults = new CbTestResults(plate, Integer.parseInt(guess), correctanswer, result, date2String);
             //FH (4) Save object to database
-            mNoderef.child("users").child(mUser.getUid()).child("Colour Blind Test").child("plate 9").setValue(cbTestResults);
+            mNoderef.child("users").child(mUser.getUid()).child("Colour Blind Test").child(date2String).child("plate 9").setValue(cbTestResults);
         }
         else if (counter == 11) {
 
@@ -493,7 +505,7 @@ public class ColourBlindTest extends AppCompatActivity {
 
             CbTestResults cbTestResults = new CbTestResults(plate, Integer.parseInt(guess), correctanswer, result, date2String);
             //FH (4) Save object to database
-            mNoderef.child("users").child(mUser.getUid()).child("Colour Blind Test").child("plate 10").setValue(cbTestResults);
+            mNoderef.child("users").child(mUser.getUid()).child("Colour Blind Test").child(date2String).child("plate 10").setValue(cbTestResults);
         }
         else if (counter == 12) {
 
@@ -507,7 +519,7 @@ public class ColourBlindTest extends AppCompatActivity {
 
             CbTestResults cbTestResults = new CbTestResults(plate, Integer.parseInt(guess), correctanswer, result, date2String);
             //FH (4) Save object to database
-            mNoderef.child("users").child(mUser.getUid()).child("Colour Blind Test").child("plate 11").setValue(cbTestResults);
+            mNoderef.child("users").child(mUser.getUid()).child("Colour Blind Test").child(date2String).child("plate 11").setValue(cbTestResults);
         }
         else if (counter == 13) {
 
@@ -521,13 +533,42 @@ public class ColourBlindTest extends AppCompatActivity {
 
             CbTestResults cbTestResults = new CbTestResults(plate, Integer.parseInt(guess), correctanswer, result, date2String);
             //FH (4) Save object to database
-            mNoderef.child("users").child(mUser.getUid()).child("Colour Blind Test").child("plate 12").setValue(cbTestResults);
+            mNoderef.child("users").child(mUser.getUid()).child("Colour Blind Test").child(date2String).child("plate 12").setValue(cbTestResults);
 
         }
         //etc
 
 
     }
+
+    private NavigationBarView.OnItemSelectedListener navBar = new NavigationBarView.OnItemSelectedListener() {
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+            switch(item.getItemId()){
+                case R.id.eyeTests:
+                    Intent intent = new Intent(ColourBlindTest.this, EyeTests.class);
+                    startActivity(intent);
+                    break;
+
+                case R.id.map:
+                    Intent intent1 = new Intent(ColourBlindTest.this, MapsActivity.class);
+                    startActivity(intent1);
+                    break;
+
+                case R.id.testResults:
+                    Intent intent2 = new Intent(ColourBlindTest.this, TestResults.class);
+                    startActivity(intent2);
+                    break;
+
+                case R.id.home:
+                    Intent intent3 = new Intent(ColourBlindTest.this, HomePage.class);
+                    startActivity(intent3);
+                    break;
+            }
+            return false;
+        }
+    };
 
 
 

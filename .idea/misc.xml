@@ -18,11 +18,14 @@
         <entry key="..\:/Users/endap/AndroidStudioProjects/finayyearProject/app/src/main/res/layout/activity_test_results.xml" value="0.23346303501945526" />
         <entry key="..\:/Users/endap/AndroidStudioProjects/finayyearProject/app/src/main/res/layout/cbtestresults_layout.xml" value="0.536" />
         <entry key="..\:/Users/endap/AndroidStudioProjects/finayyearProject/app/src/main/res/layout/row_layout.xml" value="0.2" />
+        <entry key="..\:/Users/endap/StudioProjects/finayyearProject/app/src/main/res/drawable-anydpi-v24/ic_EyeTest.xml" value="0.1" />
+        <entry key="..\:/Users/endap/StudioProjects/finayyearProject/app/src/main/res/drawable-anydpi-v24/ic_homepage.xml" value="0.1" />
+        <entry key="..\:/Users/endap/StudioProjects/finayyearProject/app/src/main/res/layout-v21/toolbar.xml" value="0.3625" />
         <entry key="..\:/Users/endap/StudioProjects/finayyearProject/app/src/main/res/layout/activity_colour_blind_test.xml" value="0.18541666666666667" />
         <entry key="..\:/Users/endap/StudioProjects/finayyearProject/app/src/main/res/layout/activity_duo_chrome_test.xml" value="0.25" />
         <entry key="..\:/Users/endap/StudioProjects/finayyearProject/app/src/main/res/layout/activity_duo_test_results.xml" value="0.3625" />
         <entry key="..\:/Users/endap/StudioProjects/finayyearProject/app/src/main/res/layout/activity_eye_tests.xml" value="0.22" />
-        <entry key="..\:/Users/endap/StudioProjects/finayyearProject/app/src/main/res/layout/activity_home_page.xml" value="0.1" />
+        <entry key="..\:/Users/endap/StudioProjects/finayyearProject/app/src/main/res/layout/activity_home_page.xml" value="0.22" />
         <entry key="..\:/Users/endap/StudioProjects/finayyearProject/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/endap/StudioProjects/finayyearProject/app/src/main/res/layout/activity_main2.xml" value="0.16168478260869565" />
         <entry key="..\:/Users/endap/StudioProjects/finayyearProject/app/src/main/res/layout/activity_maps.xml" value="0.1762917933130699" />
@@ -38,6 +41,8 @@
         <entry key="..\:/Users/endap/StudioProjects/finayyearProject/app/src/main/res/layout/row_layout.xml" value="0.1" />
         <entry key="..\:/Users/endap/StudioProjects/finayyearProject/app/src/main/res/layout/row_layout2.xml" value="0.33" />
         <entry key="..\:/Users/endap/StudioProjects/finayyearProject/app/src/main/res/layout/row_layout3.xml" value="0.3625" />
+        <entry key="..\:/Users/endap/StudioProjects/finayyearProject/app/src/main/res/layout/toolbar.xml" value="0.3625" />
+        <entry key="..\:/Users/endap/StudioProjects/finayyearProject/app/src/main/res/menu/bottom_navigation_bar.xml" value="0.24010416666666667" />
       </map>
     </option>
   </component>
