@@ -8,10 +8,15 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.firebaseregistration.models.CbTestResults;
+import com.example.firebaseregistration.models.VATestResults;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -25,7 +30,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ColourBlindTestResults extends AppCompatActivity {
+public class ColourBlindTestResults extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
     private FirebaseDatabase database;
     private DatabaseReference mDatabase, mDatabase2;
     private List<CbTestResults> listofResults;
@@ -33,6 +38,9 @@ public class ColourBlindTestResults extends AppCompatActivity {
     RecyclerView tableLayout;
     private String datechild;
     private BottomNavigationView btmNavbar;
+    private Spinner spinner;
+    private List<String> items;
+    private String item;
 
 
     private TextView tv1,tv2,tv3,tv4;
@@ -45,7 +53,8 @@ public class ColourBlindTestResults extends AppCompatActivity {
         database = FirebaseDatabase.getInstance("https://newproject-49f95-default-rtdb.europe-west1.firebasedatabase.app/");
         mDatabase = database.getReference();
         mUser = FirebaseAuth.getInstance().getCurrentUser();
-
+        spinner = findViewById(R.id.spinner);
+        items = new ArrayList<>();
 
         btmNavbar = findViewById(R.id.bottomNavigationView);
         btmNavbar.setOnItemSelectedListener(navBar);
@@ -55,29 +64,17 @@ public class ColourBlindTestResults extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 Iterable<DataSnapshot> testResults = snapshot.getChildren();
 
-                for (DataSnapshot ds:testResults) {
-                    datechild = ds.getKey();
+                for(DataSnapshot ds: testResults){
+                    String child = ds.getKey();
+                    items.add(child);
+                    ArrayAdapter arrayAdapter = new ArrayAdapter(ColourBlindTestResults.this, android.R.layout.simple_spinner_dropdown_item,items);
+                    arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
+                    spinner.setAdapter(arrayAdapter);
+                    spinner.setOnItemSelectedListener(ColourBlindTestResults.this);
                 }
-                    mDatabase.child("users").child(mUser.getUid()).child("Colour Blind Test").child(datechild).addValueEventListener(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(@NonNull DataSnapshot snapshot) {
-                            Iterable<DataSnapshot> testResults = snapshot.getChildren();
 
-                            for (DataSnapshot as:testResults) {
-                                CbTestResults value = as.getValue(CbTestResults.class);
-                                listofResults.add(value);
-                            }
-                            Adapter adapter = new Adapter(ColourBlindTestResults.this, (ArrayList<CbTestResults>) listofResults);
-                            tableLayout.setAdapter(adapter);
-                            tableLayout.setLayoutManager(new LinearLayoutManager(ColourBlindTestResults.this));
 
-                        }
 
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError error) {
-
-                        }
-                    });
             }
 
             @Override
@@ -85,6 +82,9 @@ public class ColourBlindTestResults extends AppCompatActivity {
 
             }
         });
+
+
+
 
     }
 
@@ -117,4 +117,38 @@ public class ColourBlindTestResults extends AppCompatActivity {
         }
     };
 
+    @Override
+    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+        item = spinner.getSelectedItem().toString();
+        Toast.makeText(this, item, Toast.LENGTH_SHORT).show();
+        listofResults.clear();
+
+
+                mDatabase.child("users").child(mUser.getUid()).child("Colour Blind Test").child(item).addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        Iterable<DataSnapshot> testResults = snapshot.getChildren();
+
+                        for (DataSnapshot as : testResults) {
+                            CbTestResults value = as.getValue(CbTestResults.class);
+                            listofResults.add(value);
+                        }
+                        Adapter adapter = new Adapter(ColourBlindTestResults.this, (ArrayList<CbTestResults>) listofResults);
+                        tableLayout.setAdapter(adapter);
+                        tableLayout.setLayoutManager(new LinearLayoutManager(ColourBlindTestResults.this));
+
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {
+
+    }
 }

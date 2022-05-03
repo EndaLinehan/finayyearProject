@@ -6,19 +6,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:background="@drawable/androidbackground"
     android:orientation="vertical">
 
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:padding="10dp"
+        android:background="@drawable/textview_shape"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="408dp"
+        android:layout_height="511dp"
         android:background="@drawable/androidbackground"
         android:gravity="top"
+        android:paddingBottom="15dp"
         android:stretchColumns="*"
-        tools:layout_editor_absoluteX="186dp"
-        tools:layout_editor_absoluteY="19dp"
-        android:paddingBottom="15dp">
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
 
 
     </androidx.recyclerview.widget.RecyclerView>
@@ -39,4 +53,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/bottom_navigation_bar"
         />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
