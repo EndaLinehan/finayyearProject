@@ -69,33 +69,38 @@ public class MainActivity2 extends AppCompatActivity {
                 });
                 mAuth = FirebaseAuth.getInstance();
                 email = etemail.getText().toString();
-
-                if(etpassword.getText().toString().equals(confirmPassword.getText().toString())) {
-                    password = etpassword.getText().toString();
-                    user.setEmail(email);
-                    user.setPassword(password);
+                String regexPattern = "^(?=.{1,64}@)[A-Za-z0-9_-]+(\\.[A-Za-z0-9_-]+)*@+[^-][A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*(\\.[A-Za-z]{2,})$";
+                if(email.matches(regexPattern)) {
+                    if (etpassword.getText().toString().equals(confirmPassword.getText().toString())) {
+                        password = etpassword.getText().toString();
+                        user.setEmail(email);
+                        user.setPassword(password);
 //                    mNoderef.child(String.valueOf(id+1)).setValue(user);
 //                    user.setId(id);
-                    mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(MainActivity2.this, new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            if (task.isSuccessful()) {
+                        mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(MainActivity2.this, new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                if (task.isSuccessful()) {
 //                                id = id++;
-                                Log.d("myActivity", "createUserWithEmail:success");
-                                mUser = mAuth.getCurrentUser();
-                                String id = task.getResult().getUser().getUid();
-                                mRootref.getReference().child("Users").child(id).setValue(user);
-                                Intent intent= new Intent(MainActivity2.this, MainActivity.class);
-                                startActivity(intent);
+                                    Log.d("myActivity", "createUserWithEmail:success");
+                                    mUser = mAuth.getCurrentUser();
+                                    String id = task.getResult().getUser().getUid();
+                                    mRootref.getReference().child("Users").child(id).setValue(user);
+                                    Intent intent = new Intent(MainActivity2.this, MainActivity.class);
+                                    startActivity(intent);
+                                } else {
+
+                                    Log.w("myActivity", "createUserWithEmail:failure", task.getException());
+                                    Toast.makeText(MainActivity2.this, "Authentication 1 failed:" + task.getException(), Toast.LENGTH_SHORT).show();
+                                }
                             }
-
-                            else {
-
-                                Log.w("myActivity", "createUserWithEmail:failure", task.getException());
-                                Toast.makeText(MainActivity2.this, "Authentication 1 failed:"+ task.getException(), Toast.LENGTH_SHORT).show();}  }});
+                        });
+                    } else {
+                        Toast.makeText(MainActivity2.this, "Passwords don't match", Toast.LENGTH_SHORT).show();
+                    }
                 }
                 else{
-                    Toast.makeText(MainActivity2.this, "Passwords don't match", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity2.this, "Email is not valid", Toast.LENGTH_SHORT).show();
                 }
 
             }

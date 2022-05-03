@@ -80,7 +80,6 @@
                 android:layout_width="350dp"
                 android:layout_height="100dp"
                 android:layout_gravity="center"
-                android:layout_marginBottom="376dp"
                 android:background="@drawable/eyetestbackground"
                 android:orientation="horizontal"
                 android:padding="3dp"
@@ -88,8 +87,8 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.365"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
-                app:layout_constraintVertical_bias="0.054">
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.162">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -191,12 +190,14 @@
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:layout_gravity="bottom"
-        android:background="#FFFF"
+        android:background="@drawable/textview_shape"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:labelVisibilityMode="labeled"
         android:visibility="visible"
+        app:itemIconTint="@color/quantum_black_100"
+        app:itemTextColor="@color/quantum_black_100"
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/bottom_navigation_bar"
         />

@@ -78,16 +78,20 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/bottomNavigationView"
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:layout_gravity="bottom"
-            android:background="#FFFF"
-            app:labelVisibilityMode="labeled"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:menu="@menu/bottom_navigation_bar" />
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_gravity="bottom"
+        android:background="@drawable/textview_shape"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:labelVisibilityMode="labeled"
+        android:visibility="visible"
+        app:itemIconTint="@color/quantum_black_100"
+        app:itemTextColor="@color/quantum_black_100"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_navigation_bar"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

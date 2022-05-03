@@ -37,7 +37,7 @@ public class VisualAcuityResults extends AppCompatActivity implements AdapterVie
     private DatabaseReference mDatabase;
     private FirebaseUser mUser;
     private List<String> items;
-    RecyclerView tableLayout, tablelayout2;
+    RecyclerView tableLayout;
     private String item;
     private BottomNavigationView btmNavbar;
 
