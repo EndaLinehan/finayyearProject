@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Optics</string>
+    <string name="app_name">Visualise</string>
     <string name="title_activity_home_page">HomePage</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>

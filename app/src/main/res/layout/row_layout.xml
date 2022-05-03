@@ -12,14 +12,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:cardBackgroundColor="#FFFF"
+        app:cardBackgroundColor="#000"
         android:paddingTop="20dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="399dp"
             android:layout_height="69dp"
             android:layout_gravity="center"
-            android:background="#1c263b"
+            android:background="@drawable/textview_shape"
             android:paddingBottom="15dp"
             android:padding="15dp">
 
@@ -28,7 +28,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Plate:"
-                android:textColor="#a6602e"
+                android:textColor="@color/quantum_black_100"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -39,7 +39,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:text="TextView"
-                android:textColor="#a6602e"
+                android:textColor="@color/quantum_black_100"
                 app:layout_constraintStart_toEndOf="@+id/textView5"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -49,7 +49,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:text="Answer:"
-                android:textColor="#a6602e"
+                android:textColor="@color/quantum_black_100"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/textView5"
@@ -62,7 +62,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="5dp"
                 android:text="TextView"
-                android:textColor="#a6602e"
+                android:textColor="@color/quantum_black_100"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/textView6"
                 app:layout_constraintTop_toBottomOf="@+id/textView1" />
@@ -74,7 +74,7 @@
                 android:layout_marginStart="44dp"
                 android:layout_marginTop="5dp"
                 android:text="Correct Answer:"
-                android:textColor="#a6602e"
+                android:textColor="@color/quantum_black_100"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/textView2"
@@ -87,7 +87,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="5dp"
                 android:text="TextView"
-                android:textColor="#a6602e"
+                android:textColor="@color/quantum_black_100"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/textView7"
                 app:layout_constraintTop_toBottomOf="@+id/textView4"
@@ -100,7 +100,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="48dp"
                 android:text="Correct or Incorrect:"
-                android:textColor="#a6602e"
+                android:textColor="@color/quantum_black_100"
                 android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@+id/textView1"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -111,7 +111,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:text="TextView"
-                android:textColor="#a6602e"
+                android:textColor="@color/quantum_black_100"
                 app:layout_constraintStart_toEndOf="@+id/textView8"
                 app:layout_constraintTop_toTopOf="parent" />
 

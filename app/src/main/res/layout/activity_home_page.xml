@@ -8,6 +8,7 @@
 
 
 
+
     <include
         android:id="@+id/include"
         layout="@layout/content_home_page"
@@ -22,122 +23,168 @@
         app:layout_anchor="@+id/include"
         app:layout_anchorGravity="center">
 
-
-        <LinearLayout
-            android:layout_width="350dp"
-            android:layout_height="100dp"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="391dp"
+            android:layout_height="592dp"
             android:layout_gravity="center"
-            android:layout_marginTop="30dp"
-            android:background="@drawable/shopbackground"
-            android:orientation="horizontal"
-            android:padding="3dp"
-            android:paddingTop="15dp">
+            android:layout_margin="20dp"
+            android:background="@drawable/view_login_box"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.90"
+            app:layout_constraintHorizontal_bias="0.952"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView"
+            app:layout_constraintVertical_bias="1.0">
+
+<!--            <LinearLayout-->
+<!--                android:id="@+id/linearLayout2"-->
+<!--                android:layout_width="350dp"-->
+<!--                android:layout_height="100dp"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:background="@drawable/shopbackground"-->
+<!--                android:orientation="horizontal"-->
+<!--                android:padding="3dp"-->
+<!--                android:paddingTop="15dp"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintHorizontal_bias="0.363"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent"-->
+<!--                app:layout_constraintVertical_bias="0.13">-->
+
+<!--                <LinearLayout-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_gravity="center"-->
+<!--                    android:orientation="vertical"></LinearLayout>-->
+
+<!--                <Button-->
+<!--                    android:id="@+id/shopBtn"-->
+<!--                    android:layout_width="209dp"-->
+<!--                    android:layout_height="64dp"-->
+<!--                    android:layout_gravity="center"-->
+<!--                    android:background="@drawable/textview_shape"-->
+<!--                    android:gravity="center"-->
+<!--                    android:text="Chart Analysis"-->
+<!--                    android:textColor="@color/colorPrimary"-->
+<!--                    android:textSize="25dp"-->
+<!--                    android:textStyle="bold"></Button>-->
+
+
+<!--            </LinearLayout>-->
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"></LinearLayout>
 
-            <Button
-                android:id="@+id/shopBtn"
-                android:layout_width="209dp"
-                android:layout_height="64dp"
+                android:id="@+id/linearLayout3"
+                android:layout_width="350dp"
+                android:layout_height="100dp"
                 android:layout_gravity="center"
-                android:background="#FFFF"
-                android:text="Shop"
-                android:textColor="@color/colorPrimary"
-                android:textSize="25dp"
-                android:textStyle="bold"></Button>
+                android:layout_marginBottom="376dp"
+                android:background="@drawable/eyetestbackground"
+                android:orientation="horizontal"
+                android:padding="3dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.365"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+                app:layout_constraintVertical_bias="0.054">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="vertical"></LinearLayout>
+
+                <Button
+                    android:id="@+id/eyetestbutton"
+                    android:layout_width="209dp"
+                    android:layout_height="64dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/textview_shape"
+                    android:gravity="center"
+                    android:text="Eye Test"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="25dp"
+                    android:textStyle="bold"></Button>
 
 
-        </LinearLayout>
-
-        <LinearLayout
-
-            android:layout_width="350dp"
-            android:layout_height="100dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="30dp"
-            android:background="@drawable/eyetestbackground"
-            android:orientation="horizontal"
-            android:padding="3dp">
+            </LinearLayout>
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"></LinearLayout>
-
-            <Button
-                android:id="@+id/eyetestbutton"
-                android:layout_width="209dp"
-                android:layout_height="64dp"
+                android:id="@+id/linearLayout"
+                android:layout_width="350dp"
+                android:layout_height="100dp"
                 android:layout_gravity="center"
-                android:background="#FFFF"
-                android:text="Eye Test"
-                android:textColor="@color/colorPrimary"
-                android:textSize="25dp"
-                android:textStyle="bold"></Button>
+                android:layout_marginBottom="200dp"
+                android:background="@drawable/checkoutbackground"
+                android:orientation="horizontal"
+                android:padding="3dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.365"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
+                app:layout_constraintVertical_bias="0.394">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"></LinearLayout>
+
+                <Button
+                    android:id="@+id/localOpticiansBtn"
+                    android:layout_width="209dp"
+                    android:layout_height="64dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/textview_shape"
+                    android:text="Local Opticians"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="25dp"
+                    android:textStyle="bold"></Button>
 
 
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="350dp"
-            android:layout_height="100dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="30dp"
-            android:background="@drawable/checkoutbackground"
-            android:orientation="horizontal"
-            android:padding="3dp">
+            </LinearLayout>
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"></LinearLayout>
-
-            <Button
-                android:id="@+id/localOpticiansBtn"
-                android:layout_width="209dp"
-                android:layout_height="64dp"
+                android:layout_width="350dp"
+                android:layout_height="100dp"
                 android:layout_gravity="center"
-                android:background="#FFFF"
-                android:text="Local Opticians"
-                android:textColor="@color/colorPrimary"
-                android:textSize="25dp"
-                android:textStyle="bold"></Button>
+                android:background="@drawable/eyetestresultsbackground"
+                android:orientation="horizontal"
+                android:padding="3dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.365"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+                app:layout_constraintVertical_bias="0.22">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"></LinearLayout>
+
+                <Button
+                    android:id="@+id/testResults"
+                    android:layout_width="209dp"
+                    android:layout_height="64dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/textview_shape"
+                    android:text="Test Results"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="25dp"
+                    android:textStyle="bold"></Button>
 
 
-        </LinearLayout>
+            </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="350dp"
-            android:layout_height="100dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="30dp"
-            android:background="@drawable/eyetestresultsbackground"
-            android:orientation="horizontal"
-            android:padding="3dp">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"></LinearLayout>
-
-            <Button
-                android:id="@+id/testResults"
-                android:layout_width="209dp"
-                android:layout_height="64dp"
-                android:layout_gravity="center"
-                android:background="#FFFF"
-                android:text="Test Results"
-                android:textColor="@color/colorPrimary"
-                android:textSize="25dp"
-                android:textStyle="bold"></Button>
-
-
-        </LinearLayout>
-
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </LinearLayout>
+
+
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
@@ -148,6 +195,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
+        app:labelVisibilityMode="labeled"
+        android:visibility="visible"
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/bottom_navigation_bar"
         />

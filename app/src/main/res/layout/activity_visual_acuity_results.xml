@@ -21,11 +21,26 @@
         android:id="@+id/spinner"
         android:padding="10dp"/>
 
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_gravity="bottom"
+        android:background="#FFFF"
+        app:labelVisibilityMode="labeled"
+        android:gravity="bottom"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_navigation_bar"
+        />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/androidbackground"
+        android:background="@color/white"
         android:gravity="top"
         android:stretchColumns="*"
         tools:layout_editor_absoluteX="186dp"
@@ -34,6 +49,7 @@
 
 
     </androidx.recyclerview.widget.RecyclerView>
+
 
 
 </LinearLayout>

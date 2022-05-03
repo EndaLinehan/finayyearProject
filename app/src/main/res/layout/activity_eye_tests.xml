@@ -8,56 +8,79 @@
     tools:context=".EyeTests">
 
 
-    <Button
-        android:id="@+id/colourblindTest"
-        android:layout_width="323dp"
-        android:layout_height="113dp"
-        android:layout_marginBottom="52dp"
-        android:background="@color/colorPrimaryDark"
-        android:bottomLeftRadius="100dp"
-        android:bottomRightRadius="100dp"
-        android:text="Colour Blind Test"
-        android:textColor="#ffff"
-        android:topLeftRadius="10dp"
-        android:topRightRadius="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/visualAcuityTest"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.887" />
-
-    <Button
-        android:id="@+id/visualAcuityTest"
-        android:layout_width="323dp"
-        android:layout_height="113dp"
-        android:layout_marginBottom="56dp"
-        android:background="@color/colorPrimaryDark"
-        android:bottomLeftRadius="100dp"
-        android:bottomRightRadius="100dp"
-        android:text="Visual Acuity Test"
-        android:textColor="#ffff"
-        android:topLeftRadius="10dp"
-        android:topRightRadius="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/duochromeTest"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/duochromeTest"
-        android:layout_width="323dp"
-        android:layout_height="113dp"
-        android:layout_marginBottom="176dp"
-        android:background="@color/colorPrimaryDark"
-        android:bottomLeftRadius="100dp"
-        android:bottomRightRadius="100dp"
-        android:text="DuoChrome Test"
-        android:textColor="#ffff"
-        android:topLeftRadius="10dp"
-        android:topRightRadius="10dp"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="349dp"
+        android:layout_height="583dp"
+        android:layout_margin="20dp"
+        android:background="@drawable/view_login_box"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHeight_percent="0.90"
 
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.229">
+
+        <Button
+            android:id="@+id/colourblindTest"
+            android:layout_width="323dp"
+            android:layout_height="113dp"
+            android:layout_marginBottom="52dp"
+            android:background="@drawable/textview_shape"
+            android:bottomLeftRadius="100dp"
+            android:bottomRightRadius="100dp"
+            android:text="Colour Blind Test"
+            android:textColor="#000"
+            android:textSize="20dp"
+            android:topLeftRadius="10dp"
+            android:topRightRadius="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/visualAcuityTest"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.615"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <Button
+            android:id="@+id/visualAcuityTest"
+            android:layout_width="323dp"
+            android:layout_height="113dp"
+            android:layout_marginBottom="28dp"
+            android:background="@drawable/textview_shape"
+            android:bottomLeftRadius="100dp"
+            android:bottomRightRadius="100dp"
+            android:text="Visual Acuity Test"
+            android:textColor="#000"
+            android:textSize="20dp"
+            android:topLeftRadius="10dp"
+            android:topRightRadius="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/duochromeTest"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.615"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.953" />
+
+        <Button
+            android:id="@+id/duochromeTest"
+            android:layout_width="323dp"
+            android:layout_height="113dp"
+            android:background="@drawable/textview_shape"
+            android:bottomLeftRadius="100dp"
+            android:bottomRightRadius="100dp"
+            android:text="DuoChrome Test"
+            android:textColor="#000"
+            android:textSize="20dp"
+            android:topLeftRadius="10dp"
+            android:topRightRadius="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.384"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.836" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
@@ -70,5 +93,6 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/bottom_navigation_bar"
+        app:labelVisibilityMode="labeled"
         />
 </androidx.constraintlayout.widget.ConstraintLayout>

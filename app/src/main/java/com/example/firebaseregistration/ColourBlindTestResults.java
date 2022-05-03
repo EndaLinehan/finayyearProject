@@ -5,11 +5,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.firebaseregistration.models.CbTestResults;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -28,6 +32,7 @@ public class ColourBlindTestResults extends AppCompatActivity {
     private FirebaseUser mUser;
     RecyclerView tableLayout;
     private String datechild;
+    private BottomNavigationView btmNavbar;
 
 
     private TextView tv1,tv2,tv3,tv4;
@@ -40,6 +45,10 @@ public class ColourBlindTestResults extends AppCompatActivity {
         database = FirebaseDatabase.getInstance("https://newproject-49f95-default-rtdb.europe-west1.firebasedatabase.app/");
         mDatabase = database.getReference();
         mUser = FirebaseAuth.getInstance().getCurrentUser();
+
+
+        btmNavbar = findViewById(R.id.bottomNavigationView);
+        btmNavbar.setOnItemSelectedListener(navBar);
 
         mDatabase.child("users").child(mUser.getUid()).child("Colour Blind Test").addValueEventListener(new ValueEventListener() {
             @Override
@@ -78,5 +87,34 @@ public class ColourBlindTestResults extends AppCompatActivity {
         });
 
     }
+
+    private NavigationBarView.OnItemSelectedListener navBar = new NavigationBarView.OnItemSelectedListener() {
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+            switch(item.getItemId()){
+                case R.id.eyeTests:
+                    Intent intent = new Intent(ColourBlindTestResults.this, EyeTests.class);
+                    startActivity(intent);
+                    break;
+
+                case R.id.map:
+                    Intent intent1 = new Intent(ColourBlindTestResults.this, MapsActivity.class);
+                    startActivity(intent1);
+                    break;
+
+                case R.id.testResults:
+                    Intent intent2 = new Intent(ColourBlindTestResults.this, TestResults.class);
+                    startActivity(intent2);
+                    break;
+
+                case R.id.home:
+                    Intent intent3 = new Intent(ColourBlindTestResults.this, HomePage.class);
+                    startActivity(intent3);
+                    break;
+            }
+            return false;
+        }
+    };
 
 }

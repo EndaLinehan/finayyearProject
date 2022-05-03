@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -13,6 +15,8 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.firebaseregistration.models.VATestResults;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -35,6 +39,8 @@ public class VisualAcuityResults extends AppCompatActivity implements AdapterVie
     private List<String> items;
     RecyclerView tableLayout, tablelayout2;
     private String item;
+    private BottomNavigationView btmNavbar;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +54,10 @@ public class VisualAcuityResults extends AppCompatActivity implements AdapterVie
         items = new ArrayList<>();
         spinner = findViewById(R.id.spinner);
         tableLayout = findViewById(R.id.recyclerView);
+
+        btmNavbar = findViewById(R.id.bottomNavigationView);
+        btmNavbar.setOnItemSelectedListener(navBar);
+
 
         mDatabase.child("users").child(mUser.getUid()).child("Visual Acuity Test").addValueEventListener(new ValueEventListener() {
             @Override
@@ -144,4 +154,33 @@ public class VisualAcuityResults extends AppCompatActivity implements AdapterVie
     public void onNothingSelected(AdapterView<?> adapterView) {
 
     }
+
+    private NavigationBarView.OnItemSelectedListener navBar = new NavigationBarView.OnItemSelectedListener() {
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+            switch(item.getItemId()){
+                case R.id.eyeTests:
+                    Intent intent = new Intent(VisualAcuityResults.this, EyeTests.class);
+                    startActivity(intent);
+                    break;
+
+                case R.id.map:
+                    Intent intent1 = new Intent(VisualAcuityResults.this, MapsActivity.class);
+                    startActivity(intent1);
+                    break;
+
+                case R.id.testResults:
+                    Intent intent2 = new Intent(VisualAcuityResults.this, TestResults.class);
+                    startActivity(intent2);
+                    break;
+
+                case R.id.home:
+                    Intent intent3 = new Intent(VisualAcuityResults.this, HomePage.class);
+                    startActivity(intent3);
+                    break;
+            }
+            return false;
+        }
+    };
 }

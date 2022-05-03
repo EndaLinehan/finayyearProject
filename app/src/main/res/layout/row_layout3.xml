@@ -9,7 +9,7 @@
         android:layout_width="411dp"
         android:layout_height="145dp"
         android:paddingTop="20dp"
-        app:cardBackgroundColor="#FFFF"
+        app:cardBackgroundColor="#000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -19,7 +19,7 @@
             android:layout_width="411dp"
             android:layout_height="135dp"
             android:layout_gravity="center"
-            android:background="#1c263b"
+            android:background="@drawable/textview_shape"
             android:padding="15dp"
             android:paddingBottom="15dp">
 
@@ -30,7 +30,7 @@
                 android:layout_marginStart="12dp"
                 android:layout_marginTop="36dp"
                 android:text="Result:"
-                android:textColor="#a6602e"
+                android:textColor="@color/quantum_black_100"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -43,7 +43,7 @@
                 android:layout_marginTop="36dp"
                 android:gravity="center"
                 android:text="TextView"
-                android:textColor="#a6602e"
+                android:textColor="@color/quantum_black_100"
                 app:layout_constraintStart_toEndOf="@+id/textView5"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -52,7 +52,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Date:"
-                android:textColor="#a6602e"
+                android:textColor="@color/quantum_black_100"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -64,7 +64,7 @@
                 android:layout_marginStart="10dp"
                 android:gravity="center"
                 android:text="TextView"
-                android:textColor="#a6602e"
+                android:textColor="@color/quantum_black_100"
                 app:layout_constraintStart_toEndOf="@+id/textView5"
                 app:layout_constraintTop_toTopOf="parent" />
 

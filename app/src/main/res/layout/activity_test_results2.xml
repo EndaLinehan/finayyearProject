@@ -7,70 +7,87 @@
     tools:context=".TestResults"
     android:background="@drawable/androidbackground">
 
-
-
-    <Button
-        android:id="@+id/colourblindTest"
-        android:layout_width="323dp"
-        android:layout_height="113dp"
-        android:background="@color/colorPrimaryDark"
-        android:bottomLeftRadius="100dp"
-        android:bottomRightRadius="100dp"
-        android:text="Colour Blind Test Results"
-        android:textColor="#ffff"
-        android:topLeftRadius="10dp"
-        android:topRightRadius="10dp"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="349dp"
+        android:layout_height="583dp"
+        android:layout_margin="20dp"
+        android:background="@drawable/view_login_box"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHeight_percent="0.90"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.103" />
+        app:layout_constraintVertical_bias="0.229">
 
-    <Button
-        android:id="@+id/visualAcuityTest"
-        android:layout_width="323dp"
-        android:layout_height="113dp"
-        android:background="@color/colorPrimaryDark"
-        android:bottomLeftRadius="100dp"
-        android:bottomRightRadius="100dp"
-        android:text="Visual Acuity Test Results"
-        android:textColor="#ffff"
-        android:topLeftRadius="10dp"
-        android:topRightRadius="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/colourblindTest"
-        app:layout_constraintVertical_bias="0.149" />
+        <Button
+            android:id="@+id/colourblindTest"
+            android:layout_width="323dp"
+            android:layout_height="113dp"
+            android:background="@drawable/textview_shape"
+            android:bottomLeftRadius="100dp"
+            android:bottomRightRadius="100dp"
+            android:text="Colour Blind Test Results"
+            android:textColor="#000"
+            android:textSize="20dp"
+            android:topLeftRadius="10dp"
+            android:topRightRadius="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.103" />
 
-    <Button
-        android:id="@+id/duochromeTest"
-        android:layout_width="323dp"
-        android:layout_height="113dp"
-        android:background="@color/colorPrimaryDark"
-        android:bottomLeftRadius="100dp"
-        android:bottomRightRadius="100dp"
-        android:text="Duo Chrome Test Results"
-        android:textColor="#ffff"
-        android:topLeftRadius="10dp"
-        android:topRightRadius="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/visualAcuityTest"
-        app:layout_constraintVertical_bias="0.259" />
+        <Button
+            android:id="@+id/visualAcuityTest"
+            android:layout_width="323dp"
+            android:layout_height="113dp"
+            android:background="@drawable/textview_shape"
+            android:bottomLeftRadius="100dp"
+            android:bottomRightRadius="100dp"
+            android:text="Visual Acuity Test Results"
+            android:textColor="#000"
+            android:textSize="20dp"
+            android:topLeftRadius="10dp"
+            android:topRightRadius="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/colourblindTest"
+            app:layout_constraintVertical_bias="0.149" />
+
+        <Button
+            android:id="@+id/duochromeTest"
+            android:layout_width="323dp"
+            android:layout_height="113dp"
+            android:background="@drawable/textview_shape"
+            android:bottomLeftRadius="100dp"
+            android:bottomRightRadius="100dp"
+            android:text="Duo Chrome Test Results"
+            android:textColor="#000"
+            android:textSize="20dp"
+            android:topLeftRadius="10dp"
+            android:topRightRadius="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.384"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/visualAcuityTest"
+            app:layout_constraintVertical_bias="0.248" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNavigationView"
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:layout_gravity="bottom"
-        android:background="#FFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/bottom_navigation_bar"
-        />
+            android:id="@+id/bottomNavigationView"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_gravity="bottom"
+            android:background="#FFFF"
+            app:labelVisibilityMode="labeled"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:menu="@menu/bottom_navigation_bar" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
