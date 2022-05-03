@@ -220,7 +220,7 @@ public class DuoChromeTest extends AppCompatActivity {
                     });
 
                 if (counter == 11) {
-                    Intent intent = new Intent(DuoChromeTest.this, EyeTests.class);
+                    Intent intent = new Intent(DuoChromeTest.this, DuoTestResults.class);
                     startActivity(intent);
                 }
             }

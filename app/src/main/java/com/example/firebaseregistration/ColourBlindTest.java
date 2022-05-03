@@ -115,7 +115,7 @@ public class ColourBlindTest extends AppCompatActivity {
                 if(counter == 12){
                     nextButton.setText("Finish");
                 }else if(counter == 13){
-                    Intent intent= new Intent(ColourBlindTest.this, EyeTests.class);
+                    Intent intent= new Intent(ColourBlindTest.this, ColourBlindTestResults.class);
                     startActivity(intent);
                 }
             }

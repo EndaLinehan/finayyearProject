@@ -124,7 +124,7 @@ public class VisualAcuityTest extends AppCompatActivity {
                     answer.setVisibility(View.VISIBLE);
                 }else if(counter == 22){
 
-                    Intent intent = new Intent(VisualAcuityTest.this, EyeTests.class);
+                    Intent intent = new Intent(VisualAcuityTest.this, VisualAcuityResults.class);
                     startActivity(intent);
                 }
             }
