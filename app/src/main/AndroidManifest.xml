@@ -49,9 +49,6 @@
         <activity
             android:name=".ColourBlindTestResults"
             android:exported="false" />
-        <activity
-            android:name=".Store"
-            android:exported="false" />
         <activity android:name=".ColourBlindTest" />
         <activity android:name=".EyeTests" />
         <activity

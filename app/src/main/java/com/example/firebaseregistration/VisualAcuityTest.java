@@ -114,7 +114,7 @@ public class VisualAcuityTest extends AppCompatActivity {
                 viewFlipper.showNext();
                 getValues();
 
-                Toast.makeText(VisualAcuityTest.this, String.valueOf(counter), Toast.LENGTH_SHORT).show();
+//                Toast.makeText(VisualAcuityTest.this, String.valueOf(counter), Toast.LENGTH_SHORT).show();
                 if(counter == 3){
                     startbtn.setText("Start");
                 }

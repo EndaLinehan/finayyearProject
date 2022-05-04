@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,13 +8,35 @@
     tools:context=".VisualAcuityResults">
 
     <TextView
+        android:id="@+id/tv1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Dates of Tests"
         android:gravity="center"
-        android:textSize="30sp"
+        android:text="Results of Duo Chrome"
         android:textColor="@android:color/black"
-        android:id="@+id/tv1"/>
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="393dp"
+        android:layout_height="612dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/androidbackground"
+        android:gravity="top"
+        android:paddingBottom="15dp"
+        android:stretchColumns="*"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv1">
+
+
+    </androidx.recyclerview.widget.RecyclerView>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
@@ -22,30 +44,14 @@
         android:layout_height="80dp"
         android:layout_gravity="bottom"
         android:background="@drawable/textview_shape"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:labelVisibilityMode="labeled"
         android:visibility="visible"
         app:itemIconTint="@color/quantum_black_100"
         app:itemTextColor="@color/quantum_black_100"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/bottom_navigation_bar"
-        />
+        app:menu="@menu/bottom_navigation_bar" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/androidbackground"
-        android:gravity="top"
-        android:stretchColumns="*"
-        tools:layout_editor_absoluteX="186dp"
-        tools:layout_editor_absoluteY="19dp"
-        android:paddingBottom="15dp">
-
-
-    </androidx.recyclerview.widget.RecyclerView>
-
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

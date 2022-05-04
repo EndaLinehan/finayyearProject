@@ -5,12 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/androidbackground"
     tools:context=".VisualAcuityResults">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Dates of Tests"
+        android:background="@color/white"
         android:gravity="center"
         android:textSize="30sp"
         android:textColor="@android:color/black"
@@ -19,7 +21,24 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:id="@+id/spinner"
+        android:background="@color/white"
         android:padding="10dp"/>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="396dp"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:gravity="top"
+        android:layout_gravity="center"
+        android:paddingBottom="15dp"
+        android:stretchColumns="*"
+        tools:layout_editor_absoluteX="186dp"
+        tools:layout_editor_absoluteY="19dp">
+
+
+    </androidx.recyclerview.widget.RecyclerView>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
@@ -37,21 +56,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/bottom_navigation_bar"
         />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:gravity="top"
-        android:stretchColumns="*"
-        tools:layout_editor_absoluteX="186dp"
-        tools:layout_editor_absoluteY="19dp"
-        android:paddingBottom="15dp">
-
-
-    </androidx.recyclerview.widget.RecyclerView>
-
 
 
 </LinearLayout>

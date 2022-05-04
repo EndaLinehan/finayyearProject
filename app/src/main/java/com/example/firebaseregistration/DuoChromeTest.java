@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.Toolbar;
 import android.widget.ViewFlipper;
@@ -37,7 +38,7 @@ import java.util.Date;
 public class DuoChromeTest extends AppCompatActivity {
 
 
-    private Button redBtn, greenBtn, startBtn;
+    private Button redBtn, greenBtn, startBtn, neitherBtn;
     private EditText answer;
     private ImageView imageView;
     private String guess = "";
@@ -47,7 +48,7 @@ public class DuoChromeTest extends AppCompatActivity {
     private int counter = 0, redCounter = 0, greenCounter = 0;
     private ViewFlipper viewFlipper;
     private Date date = new Date();
-    ;
+    private TextView tv;
     private DatabaseReference mDatabase;
     private FirebaseDatabase mRootref;
     private DatabaseReference mNoderef;
@@ -68,13 +69,15 @@ public class DuoChromeTest extends AppCompatActivity {
 
         btmNavbar = findViewById(R.id.bottomNavigationView);
         btmNavbar.setOnItemSelectedListener(navBar);
-
+        tv = findViewById(R.id.tv1);
         viewFlipper = (ViewFlipper) findViewById(R.id.viewFlipper);
         redBtn = findViewById(R.id.redBtn);
         greenBtn = findViewById(R.id.greenBtn);
         startBtn = findViewById(R.id.beginBtn);
+        neitherBtn = findViewById(R.id.neitherBtn);
         redBtn.setVisibility(View.GONE);
         greenBtn.setVisibility(View.GONE);
+        tv.setVisibility(View.GONE);
         mUser = FirebaseAuth.getInstance().getCurrentUser();
 
         mRootref = FirebaseDatabase.getInstance("https://newproject-49f95-default-rtdb.europe-west1.firebasedatabase.app/");
@@ -108,7 +111,7 @@ public class DuoChromeTest extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-
+                    tv.setVisibility(View.VISIBLE);
 
 
 
@@ -119,6 +122,54 @@ public class DuoChromeTest extends AppCompatActivity {
 
                     loadImages();
                     viewFlipper.showNext();
+
+                    neitherBtn.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            counter++;
+                            loadImages();
+                            viewFlipper.showNext();
+
+                            if (counter == 5) {
+                                imageView = findViewById(R.id.imageView0);
+
+                                //ENDA change this to the correct location/folder file for your database
+                                storageReference = FirebaseStorage.getInstance().getReference().child("Duochrome Test/Image 5.jpg");
+
+                                startBtn.setVisibility(View.VISIBLE);
+                                redBtn.setVisibility(View.GONE);
+                                greenBtn.setVisibility(View.GONE);
+                                tv.setVisibility(View.GONE);
+                                startBtn.setText("Eyes Swapped");
+
+                                try {
+                                    File local = File.createTempFile("Image 5", "jpg");
+                                    storageReference.getFile(local)
+                                            .addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
+                                                @Override
+                                                public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
+                                                    Bitmap bitmap = BitmapFactory.decodeFile(local.getAbsolutePath());
+                                                    imageView.setImageBitmap(bitmap);
+                                                }
+                                            });
+                                } catch (IOException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                            if (counter == 10) {
+
+                                redBtn.setVisibility(View.GONE);
+                                greenBtn.setVisibility(View.GONE);
+                                tv.setVisibility(View.GONE);
+                                startBtn.setText("Finish!");
+                                startBtn.setVisibility(View.VISIBLE);
+
+                            } else if (counter == 11) {
+                                Intent intent = new Intent(DuoChromeTest.this, EyeTests.class);
+                                startActivity(intent);
+                            }
+                        }
+                    });
 
 
                     redBtn.setOnClickListener(new View.OnClickListener() {

@@ -41,15 +41,7 @@ public class HomePage extends AppCompatActivity {
             }
         });
 
-//        shop = findViewById(R.id.shopBtn);
-//
-//        shop.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(HomePage.this, Store.class);
-//                startActivity(intent);
-//            }
-//        });
+
 
         testResults = findViewById(R.id.testResults);
 

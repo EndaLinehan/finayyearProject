@@ -48,23 +48,28 @@ public class MainActivity extends AppCompatActivity {
                 email1 = email.getText().toString();
                 password1 = password.getText().toString();
                 //Toast.makeText(MainActivity.this, email1, Toast.LENGTH_LONG).show();
-                if(!email1.isEmpty() || !password1.isEmpty()) {
-                    mAuth.signInWithEmailAndPassword(email1, password1).addOnCompleteListener(MainActivity.this, new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            if (task.isSuccessful()) {
-                                Toast.makeText(MainActivity.this, "User signed in.", Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(MainActivity.this, HomePage.class);
-                                startActivity(intent);
-                            } else {
-                                Log.w("MySignin", "SignInUserWithEmail:failure", task.getException());
-                                Toast.makeText(MainActivity.this, "Authentication failed.", Toast.LENGTH_SHORT).show();
+                if(!email1.isEmpty()) {
+                    if (!password1.isEmpty()) {
+                        mAuth.signInWithEmailAndPassword(email1, password1).addOnCompleteListener(MainActivity.this, new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                if (task.isSuccessful()) {
+                                    Toast.makeText(MainActivity.this, "User signed in.", Toast.LENGTH_SHORT).show();
+                                    Intent intent = new Intent(MainActivity.this, HomePage.class);
+                                    startActivity(intent);
+                                } else {
+                                    Log.w("MySignin", "SignInUserWithEmail:failure", task.getException());
+                                    Toast.makeText(MainActivity.this, "Authentication failed.", Toast.LENGTH_SHORT).show();
+                                }
                             }
-                        }
-                    });
+                        });
+                    }
+                    else{
+                        Toast.makeText(MainActivity.this, "Password is Empty", Toast.LENGTH_SHORT).show();
+                    }
                 }
                 else{
-                    Toast.makeText(MainActivity.this, "Email or Passwrod is Empty", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Email is Empty", Toast.LENGTH_SHORT).show();
                 }
             }});
 

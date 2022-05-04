@@ -77,24 +77,33 @@ public class MainActivity2 extends AppCompatActivity {
                         user.setPassword(password);
 //                    mNoderef.child(String.valueOf(id+1)).setValue(user);
 //                    user.setId(id);
-                        mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(MainActivity2.this, new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                if (task.isSuccessful()) {
+                        if(!email.isEmpty()) {
+                            if(!password.isEmpty()) {
+                                    mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(MainActivity2.this, new OnCompleteListener<AuthResult>() {
+                                        @Override
+                                        public void onComplete(@NonNull Task<AuthResult> task) {
+                                            if (task.isSuccessful()) {
 //                                id = id++;
-                                    Log.d("myActivity", "createUserWithEmail:success");
-                                    mUser = mAuth.getCurrentUser();
-                                    String id = task.getResult().getUser().getUid();
-                                    mRootref.getReference().child("Users").child(id).setValue(user);
-                                    Intent intent = new Intent(MainActivity2.this, MainActivity.class);
-                                    startActivity(intent);
-                                } else {
+                                                Log.d("myActivity", "createUserWithEmail:success");
+                                                mUser = mAuth.getCurrentUser();
+                                                String id = task.getResult().getUser().getUid();
+                                                mRootref.getReference().child("Users").child(id).setValue(user);
+                                                Intent intent = new Intent(MainActivity2.this, MainActivity.class);
+                                                startActivity(intent);
+                                            } else {
 
-                                    Log.w("myActivity", "createUserWithEmail:failure", task.getException());
-                                    Toast.makeText(MainActivity2.this, "Authentication 1 failed:" + task.getException(), Toast.LENGTH_SHORT).show();
-                                }
+                                                Log.w("myActivity", "createUserWithEmail:failure", task.getException());
+                                                Toast.makeText(MainActivity2.this, "Authentication 1 failed:" + task.getException(), Toast.LENGTH_SHORT).show();
+                                            }
+                                        }
+                                    });
+
+                            }else{
+                                Toast.makeText(MainActivity2.this, "Password is Empty", Toast.LENGTH_SHORT).show();
                             }
-                        });
+                        }else{
+                            Toast.makeText(MainActivity2.this, "Email is Empty", Toast.LENGTH_SHORT).show();
+                        }
                     } else {
                         Toast.makeText(MainActivity2.this, "Passwords don't match", Toast.LENGTH_SHORT).show();
                     }
